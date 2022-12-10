@@ -5,12 +5,9 @@ import Header from "./components/header/Index";
 import Calculator from "./components/calculator/Index";
 import Slider from "./components/slider/index";
 import Footer from "./components/footer/Index";
-import Modal from "./components/modal/Index";
 import "./App.css";
 
 import { BrowserRouter } from "react-router-dom";
-
-import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -21,7 +18,6 @@ function App() {
         <Calculator />
         <Slider />
         <Footer />
-        
       </div>
     </BrowserRouter>
   );
