@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faTelegram } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelopeSquare } from "@fortawesome/free-solid-svg-icons";
@@ -38,7 +37,7 @@ const Index = () => {
             />
           </div>
           <div className='mail flex flex-col'>
-            <a className='flex mb-2 underline' href=''>
+            <a className='flex mb-2 underline' href='/#'>
               {" "}
               <FontAwesomeIcon
                 className='w-7 text-blue-800 mr-2 h-7'
@@ -47,8 +46,7 @@ const Index = () => {
               />
               adamdimert@gmail.com
             </a>
-
-            <a className='flex underline' href=''>
+            <a className='flex underline' href='/#'>
               {" "}
               <FontAwesomeIcon
                 className='w-7 text-blue-800 mr-2 h-7'
@@ -59,11 +57,11 @@ const Index = () => {
             </a>
           </div>
           <div className='telephone flex flex-col'>
-            <a className='flex items-center' href='#'>
+            <a className='flex items-center' href='/#'>
               <FontAwesomeIcon icon={faPhone} className=' text-green-300 mr-2' />
               8-707-440-80-18
             </a>
-            <a className='flex items-center' href='#'>
+            <a className='flex items-center' href='/#'>
               <FontAwesomeIcon icon={faPhone} className=' text-green-300 mr-2' />{" "}
               8-707-440-80-18
             </a>
@@ -74,31 +72,31 @@ const Index = () => {
           <h3 className='mb-6 font-bold text-2xl'>Ссылки</h3>
           <ul>
             <li className='mb-4'>
-              <a className='relative group cursor-pointer'>
+              <a href='/#' className='relative group cursor-pointer'>
                 <span>О Нас</span>
                 <div className='absolute bottom-[7.25px] right-0 w-0 h-[3px] bg-[#176c9a] transition-all group-hover:w-full'></div>
               </a>
             </li>
             <li className='mb-4'>
-              <a className='relative group cursor-pointer'>
+              <a href='/#' className='relative group cursor-pointer'>
                 <span>Услуги</span>
                 <div className='absolute bottom-[7.25px] right-0 w-0 h-[3px] bg-[#176c9a] transition-all group-hover:w-full'></div>
               </a>
             </li>
             <li className='mb-4'>
-              <a className='relative group cursor-pointer'>
+              <a href='/#' className='relative group cursor-pointer'>
                 <span>Калькуляторр цен</span>
                 <div className='absolute bottom-[7.25px] right-0 w-0 h-[3px] bg-[#176c9a] transition-all group-hover:w-full'></div>
               </a>
             </li>
             <li className='mb-4'>
-              <a className='relative group cursor-pointer'>
+              <a href='/#' className='relative group cursor-pointer'>
                 <span>Сертификаты</span>
                 <div className='absolute bottom-[7.25px] right-0 w-0 h-[3px] bg-[#176c9a] transition-all group-hover:w-full'></div>
               </a>
             </li>
             <li className=''>
-              <a className='relative group cursor-pointer'>
+              <a href='/#' className='relative group cursor-pointer'>
                 <span>Контакты</span>
                 <div className='absolute bottom-[7.25px] right-0 w-0 h-[3px] bg-[#176c9a] transition-all group-hover:w-full'></div>
               </a>
