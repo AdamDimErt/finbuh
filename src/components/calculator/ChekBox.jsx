@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { setPrice, removePrice } from "../../features/calculator/calculator";
+import { setPrice, removePrice } from "../../store/slice/calculator/calculator";
 
 const ChekBox = ({ name, value, id }) => {
   const dispatch = useDispatch();

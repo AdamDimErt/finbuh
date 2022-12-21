@@ -17,8 +17,8 @@ const Index = () => {
   return (
     <div className='footer shadow-inner flex justify-center bg-[#fff] h-[300px]'>
       <div className='flex mt-7 container justify-between w-[1280px]'>
-        <div className='section flex flex-col justify-evenly'>
-          <div className='logo text-4xl'>FiNova</div>
+        <div className='section flex flex-col justify-between '>
+          <div className='logo text-3xl'>FiNova</div>
           <div className='icons flex'>
             <FontAwesomeIcon
               fill='green'
@@ -69,7 +69,7 @@ const Index = () => {
         </div>
 
         <div className='section list-none'>
-          <h3 className='mb-6 font-bold text-2xl'>Ссылки</h3>
+          <h3 className='mb-6 font-bold text-2xl border-b-2'>Ссылки</h3>
           <ul>
             <li className='mb-4'>
               <a href='/#' className='relative group cursor-pointer'>

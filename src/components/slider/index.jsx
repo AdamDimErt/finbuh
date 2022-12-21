@@ -6,6 +6,7 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./slider.css";
 
+
 const responsive = {
   0: { items: 1 },
   568: { items: 2 },

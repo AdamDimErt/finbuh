@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setPrice, removePrice } from "../../features/calculator/calculator";
+import { setPrice, removePrice } from "../../store/slice/calculator/calculator";
 
 import ChekBox from "./ChekBox";
 import "./calculator.css";

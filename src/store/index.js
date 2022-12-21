@@ -1,8 +1,10 @@
 /** @format */
 
 import { configureStore } from "@reduxjs/toolkit";
-import calculatorSlice from "../features/calculator/calculator";
+
+import calculatorSlice from "./slice/calculator/calculator";
+import userSlice from "./slice/user/user";
 
 export const store = configureStore({
-  reducer: { calc: calculatorSlice },
+  reducer: { calc: calculatorSlice, user: userSlice },
 });
