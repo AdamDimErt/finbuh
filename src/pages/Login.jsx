@@ -37,11 +37,11 @@ const Login = () => {
     }
   };
 
-  const logOut = async () => {
-    dispatch(removeUser());
-    await signOut(auth);
-    localStorage.removeItem("jwt-auth");
-  };
+  // const logOut = async () => {
+  //   dispatch(removeUser());
+  //   await signOut(auth);
+  //   localStorage.removeItem("jwt-auth");
+  // };
   return (
     <div>
       <input
