@@ -2,10 +2,8 @@
 
 import React, { useState } from "react";
 
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signOut, signInWithEmailAndPassword } from "firebase/auth";
 
-import Cookies from "universal-cookie";
-import jwtDecode from "jwt-decode";
 import { useDispatch } from "react-redux";
 
 import { setUser, removeUser } from "../store/slice/user/user";
@@ -39,8 +37,10 @@ const Login = () => {
     }
   };
 
-  const logOut = () => {
+  const logOut = async () => {
     dispatch(removeUser());
+    await signOut(auth);
+    localStorage.removeItem("jwt-auth");
   };
   return (
     <div>
@@ -59,7 +59,6 @@ const Login = () => {
         }}
       />
       <button onClick={login}>click</button>
-      <button onClick={login}>log out</button>
     </div>
   );
 };
