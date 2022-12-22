@@ -2,15 +2,15 @@
 
 import React, { useState } from "react";
 
-import { getAuth, signOut, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 import { useDispatch } from "react-redux";
 
-import { setUser, removeUser } from "../store/slice/user/user";
+import { auth } from "../firebase-config";
+
+import { setUser } from "../store/slice/user/user";
 
 const Login = () => {
-  const auth = getAuth();
-
   const dispatch = useDispatch();
 
   const [email, setEmail] = useState("");
@@ -38,14 +38,9 @@ const Login = () => {
     }
   };
 
-  // const logOut = async () => {
-  //   dispatch(removeUser());
-  //   await signOut(auth);
-  //   localStorage.removeItem("jwt-auth");
-  // };
   return (
     <div>
-      <div class='fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full'>
+      <div class=' w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full'>
         <div class='relative w-full h-full max-w-md md:h-auto'>
           <div class='relative bg-white rounded-lg shadow dark:bg-gray-700'>
             <div class='px-6 py-6 lg:px-8'>

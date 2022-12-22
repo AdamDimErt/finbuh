@@ -27,7 +27,9 @@ function App() {
 
           <Route path='/admin' element={<AdminPanel />}></Route>
           <Route path='*' element={<NotFound />} />
+          <Route path='/login' element={<Login />} />
         </Routes>
+        <Routes></Routes>
       </div>
       <Footer />
     </>
