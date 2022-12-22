@@ -12,9 +12,14 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import AdminPanel from "./pages/AdminPanel";
 import NotFound from "./pages/NotFound";
+import { Navigate } from "react-router-dom";
 
 function App() {
   const { auth } = useAuth();
+
+  const AuthWrapper = ({ auth }) => {
+    return auth ? <Navigate to='/login' replace /> : <Navigate to='/admin' replace />;
+  };
 
   console.log(auth);
   return (
@@ -23,9 +28,9 @@ function App() {
 
       <div className='App bg-[#E3E2DF] '>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' index element={<Home />} />
 
-          <Route path='/admin' element={<AdminPanel />}></Route>
+          <Route path='/admin' element={<AuthWrapper />} />
           <Route path='*' element={<NotFound />} />
           <Route path='/login' element={<Login />} />
         </Routes>

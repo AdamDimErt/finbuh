@@ -29,7 +29,7 @@ const Header = () => {
     };
   }, []);
 
-  const toogleMenu = () => {
+  const toggleMenu = () => {
     setIsOpen(!isOpen);
     console.log(isOpen);
   };
@@ -77,7 +77,7 @@ const Header = () => {
             </a>
           </li>
         </ul>
-        <div className='flexw-1/4 justify-center'>
+        <div className='flex w-1/4 justify-center'>
           <a
             href='/#'
             className='cursor-pointer mr-3 underline underline-offset-4 duration-300 ease-in-out decoration-blue-500/[.33] hover:decoration-blue-500 transition'
@@ -95,7 +95,7 @@ const Header = () => {
               className='input'
               type='checkbox'
               id='check'
-              onClick={() => toogleMenu()}
+              onClick={() => toggleMenu()}
             />
             <span></span>
             <span></span>
