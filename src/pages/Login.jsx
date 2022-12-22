@@ -10,7 +10,6 @@ import { auth } from "../firebase-config";
 
 import { setUser } from "../store/slice/user/user";
 import { Navigate, useNavigate } from "react-router-dom";
-import AdminPanel from "./AdminPanel";
 
 const Login = () => {
   const dispatch = useDispatch();
