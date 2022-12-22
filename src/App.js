@@ -20,6 +20,7 @@ function App() {
   return (
     <>
       <Header />
+
       <div className='App bg-[#E3E2DF] '>
         <Routes>
           <Route path='/' element={<Home />} />

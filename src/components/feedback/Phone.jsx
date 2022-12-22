@@ -9,7 +9,7 @@ const Phone = ({ number, onChange }) => {
       mask='+7 (999)-999-99-99'
       value={number}
       onChange={onChange}
-      className='py-3 px-3 w-96 rounded-sm'
+      className='py-3 px-3 w-[56rem] rounded-sm'
     ></InputMask>
   );
 };
