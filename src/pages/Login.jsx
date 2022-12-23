@@ -1,44 +1,40 @@
 /** @format */
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import { signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { useDispatch, useSelector } from "react-redux";
 
-import { useDispatch } from "react-redux";
-
-import { auth } from "../firebase-config";
-
-import { setUser } from "../store/slice/user/user";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
+import { fetchAuth, isAuthSelector } from "../store/slice/auth/auth";
 
 const Login = () => {
+  const isAuth = useSelector(isAuthSelector);
   const dispatch = useDispatch();
   // creation of fields for authorization
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+  // set data in auth
 
-  console.log(password);
-  console.log(email);
+  const update = (e) => {
+    setData({
+      ...data,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   // fun login
   const login = async () => {
-    try {
-      // request to firebase
-      const user = await signInWithEmailAndPassword(auth, email, password);
+    const user = await dispatch(fetchAuth(data));
+    console.log(user);
+    if (!user.payload) {
+      alert("не удалось авторизоваться");
+    }
+    window.localStorage.setItem("token", user.payload);
 
-      dispatch(
-        setUser({
-          email: user.user.email,
-          id: user.user.uid,
-          accessToken: user.user.accessToken,
-        }),
-      );
-      console.log(user);
-      // save in localstorage
-      localStorage.setItem("jwt-auth", user.user.accessToken);
-      <Navigate to='/admin' replace />;
-    } catch (error) {
-      console.log(error);
+    if (isAuth) {
+      <Navigate to='admin' />;
     }
   };
 
@@ -49,7 +45,7 @@ const Login = () => {
           <div className='relative bg-white rounded-lg shadow dark:bg-gray-700'>
             <div className='px-6 py-6 lg:px-8'>
               <h3 className='mb-4 text-xl font-medium text-gray-900 dark:text-white'>
-                Sign in to our platform
+                Войти в Админ панель
               </h3>
               <div className='space-y-6'>
                 <div>
@@ -57,7 +53,7 @@ const Login = () => {
                     Почта
                   </label>
                   <input
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={update}
                     type='email'
                     name='email'
                     id='email'
@@ -70,7 +66,7 @@ const Login = () => {
                     Пароль
                   </label>
                   <input
-                    onChange={(e) => setPassword(e.target.value)}
+                    onChange={update}
                     type='password'
                     name='password'
                     placeholder='••••••••'
