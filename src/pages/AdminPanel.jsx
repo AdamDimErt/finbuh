@@ -12,17 +12,26 @@ import { db } from "../firebase-config";
 import { collection, getDocs } from "firebase/firestore";
 
 const AdminPanel = () => {
-  const [client, setClient] = useState([]);
-
+  const [clients, setClients] = useState([]);
+  const colRef = collection(db, "users");
   const isAuth = useSelector(isAuthSelector);
-  const test = async () => {
-    const colRef = collection(db, "users");
-    const docsSnap = await getDocs(colRef);
-    docsSnap.forEach((doc) => {
-      console.log(doc.data());
-      console.log(doc.id);
-    });
-  };
+
+  useEffect(() => {
+    const getClients = async () => {
+      const data = await getDocs(colRef);
+
+      setClients(
+        data.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+          time:Date(+doc._document.createTime.timestamp.seconds),
+        })),
+      );
+    };
+    getClients();
+  }, []);
+
+  console.log(clients);
 
   // user jwt token
   const token = window.localStorage.getItem("token");
@@ -33,7 +42,7 @@ const AdminPanel = () => {
   }
   return (
     <div>
-      <button onClick={() => test}>click</button>
+      <button>click</button>
       <h2 className='text-4xl  text-center pt-10'>Admin Panel</h2>
       <h3 className='text-2xl'>Добро пажаловать {user.name}</h3>{" "}
       <div className='w-full'>
@@ -53,34 +62,42 @@ const AdminPanel = () => {
                     </tr>
                   </thead>
                   <tbody className='bg-white divide-y divide-gray-300'>
-                    <tr className='whitespace-nowrap'>
-                      <td className='px-6 py-4 text-sm text-center text-gray-500'>1</td>
-                      <td className='px-6 py-4'>
-                        <div className='text-sm text-gray-900 text-center'>Jon doe</div>
-                      </td>
-                      <td className='px-6 py-4'>
-                        <input className='text-sm text-gray-500 text-center'></input>
-                      </td>
-                      <td className='px-6 py-4 text-sm text-gray-500 text-center'>
-                        <input type='date' />
-                      </td>
-                      <td className='px-6 py-4 text-center'>
-                        <a
-                          href='#'
-                          className='px-4 py-1 text-sm text-blue-600 bg-blue-200 rounded-full'
-                        >
-                          Изменить
-                        </a>
-                      </td>
-                      <td className='px-6 py-4 text-center'>
-                        <a
-                          href='#'
-                          className='px-4 py-1 text-sm text-red-400 bg-red-200 rounded-full'
-                        >
-                          Удалить
-                        </a>
-                      </td>
-                    </tr>
+                    {clients.map((client) => {
+                      return (
+                        <tr className='whitespace-nowrap'>
+                          <td className='px-6 py-4 text-sm text-center text-gray-500'>
+                            1
+                          </td>
+                          <td className='px-6 py-4'>
+                            <div className='text-sm text-gray-900 text-center'>
+                              {client.name}
+                            </div>
+                          </td>
+                          <td className='px-6 py-4'>
+                            <input className='text-sm text-gray-500 text-center'></input>
+                          </td>
+                          <td className='px-6 py-4 text-sm text-gray-500 text-center'>
+                            <p>{client.time}</p>
+                          </td>
+                          <td className='px-6 py-4 text-center'>
+                            <a
+                              href='#'
+                              className='px-4 py-1 text-sm text-blue-600 bg-blue-200 rounded-full'
+                            >
+                              Изменить
+                            </a>
+                          </td>
+                          <td className='px-6 py-4 text-center'>
+                            <a
+                              href='#'
+                              className='px-4 py-1 text-sm text-red-400 bg-red-200 rounded-full'
+                            >
+                              Удалить
+                            </a>
+                          </td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
               </div>

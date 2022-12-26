@@ -8,16 +8,9 @@ const initialState = {
   status: "loading",
 };
 
+
 export const fetchClient = createAsyncThunk("client/fetchClient", async () => {
-  try {
-    const colRef = collection(db, "users");
-    const docsSnap = await getDocs(colRef);
-    docsSnap.forEach((doc) => {
-      return doc.data();
-    });
-  } catch (error) {
-    console.log(error);
-  }
+
 });
 
 const clientSlice = createSlice({
