@@ -1,14 +1,16 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-import { Navigate } from "react-router-dom";
 import { fetchAuth, isAuthSelector } from "../store/slice/auth/auth";
 
 const Login = () => {
+  const navigate = useNavigate();
   const isAuth = useSelector(isAuthSelector);
+  console.log(isAuth);
   const dispatch = useDispatch();
   // creation of fields for authorization
   const [data, setData] = useState({
@@ -27,14 +29,13 @@ const Login = () => {
   // fun login
   const login = async () => {
     const user = await dispatch(fetchAuth(data));
-    console.log(user);
+
     if (!user.payload) {
       alert("не удалось авторизоваться");
     }
-    window.localStorage.setItem("token", user.payload);
-
+    window.localStorage.setItem("token", user.payload.user.accessToken);
     if (isAuth) {
-      <Navigate to='admin' />;
+      return navigate("/admin");
     }
   };
 

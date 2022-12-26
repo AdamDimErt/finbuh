@@ -2,7 +2,11 @@
 
 import { Navigate, Outlet } from "react-router-dom";
 
+import { useSelector } from "react-redux";
+import { isAuthSelector } from "../store/slice/auth/auth";
+
 export const PrivateRoute = (auth) => {
-  console.log(auth);
-  return auth ? <Outlet /> : <Navigate to='/login' />;
+  const isAuth = useSelector(isAuthSelector);
+  console.log(isAuth);
+  return isAuth ? <Navigate to='/admin' /> : <Navigate to='/login' />;
 };

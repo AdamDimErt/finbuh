@@ -11,8 +11,6 @@ const initialState = {
 };
 
 export const fetchAuth = createAsyncThunk("auth/fetchAuth", async (data) => {
-  console.log(data.email);
-
   try {
     const user = await signInWithEmailAndPassword(auth, data.email, data.password);
     return user;
@@ -36,7 +34,7 @@ const authSlice = createSlice({
       state.user = null;
     },
     [fetchAuth.fulfilled]: (state, action) => {
-      state.status = "loading";
+      state.status = "loaded";
       state.user = action.payload.user;
     },
     [fetchAuth.rejected]: (state) => {
@@ -47,7 +45,8 @@ const authSlice = createSlice({
 });
 
 export const isAuthSelector = (state) => {
-  Boolean(state.auth.data);
+  console.log(state.auth.user);
+  return Boolean(state.auth.user);
 };
 
 export const authReducer = authSlice.reducer;

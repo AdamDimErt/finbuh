@@ -7,7 +7,6 @@ import "./App.css";
 
 import { Route, Routes } from "react-router-dom";
 
-
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import AdminPanel from "./pages/AdminPanel";
@@ -16,8 +15,6 @@ import { Navigate } from "react-router-dom";
 import { PrivateRoute } from "./utils/PrivateRoute";
 
 function App() {
- 
-
   return (
     <>
       <Header />
@@ -28,7 +25,8 @@ function App() {
 
           <Route path='*' element={<NotFound />} />
           <Route path='login' element={<Login />} />
-
+          <Route path='/admin' element={<AdminPanel />} />
+          
         </Routes>
       </div>
       <Footer />
