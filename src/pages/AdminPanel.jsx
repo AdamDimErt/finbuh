@@ -24,7 +24,7 @@ const AdminPanel = () => {
         data.docs.map((doc) => ({
           ...doc.data(),
           id: doc.id,
-          time:Date(+doc._document.createTime.timestamp.seconds),
+          time: Date(+doc._document.createTime.timestamp.seconds),
         })),
       );
     };

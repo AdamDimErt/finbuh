@@ -8,7 +8,7 @@ const TariffPlan = ({ value }) => {
   value == "start" ? console.log("da") : console.log("net");
   return (
     <div className='start'>
-      <h3>Start</h3>
+      <h3>{value}</h3>
       <ul>
         <li>
           {value === "start"

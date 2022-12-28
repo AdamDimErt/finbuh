@@ -11,7 +11,7 @@ import TariffPlan from "./TariffPlan";
 
 const Index = () => {
   return (
-    <div className='tariff pt-20 flex'>
+    <div className='tariff pt-20 flex container justify-center bg-white'>
       <div className=''>
         <ul>
           <li>
@@ -65,8 +65,13 @@ const Index = () => {
               data-tooltip-content='Внешнеэкономическая Деятельность'
               data-tooltip-place='top'
               id='VED'
+              className='relative'
             >
               Вэд / Еаэс
+              <FontAwesomeIcon
+                className=' absolute top-0 text-[10px]'
+                icon={faQuestion}
+              />
             </p>
             <Tooltip anchorId='VED' />
           </li>
