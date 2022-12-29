@@ -2,14 +2,14 @@
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { faCheck, faXmark, faQuestion } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const TariffPlan = ({ value }) => {
-  value == "start" ? console.log("da") : console.log("net");
+  value === "start" ? console.log("da") : console.log("net");
   return (
     <div className='start'>
-      <h3>Start</h3>
-      <ul>
+      <h3 className='text-center text-xl font-bold mb-5'>{value}</h3>
+      <ul className='flex flex-col items-center justify-between h-[500px]'>
         <li>
           {value === "start"
             ? 30
@@ -34,10 +34,10 @@ const TariffPlan = ({ value }) => {
             : null}
         </li>
         <li>
-          <FontAwesomeIcon icon={faCheck} />
+          <FontAwesomeIcon className=' text-green-500' icon={faCheck} />
         </li>
         <li>
-          <FontAwesomeIcon icon={faCheck} />
+          <FontAwesomeIcon className=' text-green-500' icon={faCheck} />
         </li>
         <li>2 раза/мес</li>
         <li>1 расчетный счет</li>
@@ -55,9 +55,9 @@ const TariffPlan = ({ value }) => {
         <li>до 2 часов</li>
         <li>
           {value === "start" ? (
-            <FontAwesomeIcon icon={faXmark} />
+            <FontAwesomeIcon className=' text-red-500' icon={faXmark} />
           ) : value === "standard" ? (
-            <FontAwesomeIcon icon={faXmark} />
+            <FontAwesomeIcon className=' text-red-500' icon={faXmark} />
           ) : value === "prof" ? (
             "до 1 часа"
           ) : value === "business" ? (
@@ -67,31 +67,31 @@ const TariffPlan = ({ value }) => {
         <li>
           {" "}
           {value === "start" ? (
-            <FontAwesomeIcon icon={faXmark} />
+            <FontAwesomeIcon className=' text-red-500' icon={faXmark} />
           ) : value === "standard" ? (
-            <FontAwesomeIcon icon={faXmark} />
+            <FontAwesomeIcon className=' text-red-500' icon={faXmark} />
           ) : value === "prof" ? (
-            <FontAwesomeIcon icon={faXmark} />
+            <FontAwesomeIcon className=' text-red-500' icon={faXmark} />
           ) : value === "business" ? (
             1
           ) : null}
         </li>
         <li>
           {value === "start" ? (
-            <FontAwesomeIcon icon={faXmark} />
+            <FontAwesomeIcon className=' text-red-500' icon={faXmark} />
           ) : value === "standard" ? (
-            <FontAwesomeIcon icon={faXmark} />
+            <FontAwesomeIcon className=' text-red-500' icon={faXmark} />
           ) : value === "prof" ? (
-            <FontAwesomeIcon icon={faCheck} />
+            <FontAwesomeIcon className=' text-green-500' icon={faCheck} />
           ) : value === "business" ? (
-            <FontAwesomeIcon icon={faCheck} />
+            <FontAwesomeIcon className=' text-green-500' icon={faCheck} />
           ) : null}
         </li>
         <li>
           {value === "start" ? (
-            <FontAwesomeIcon icon={faXmark} />
+            <FontAwesomeIcon className=' text-red-500' icon={faXmark} />
           ) : value === "standard" ? (
-            <FontAwesomeIcon icon={faXmark} />
+            <FontAwesomeIcon className=' text-red-500' icon={faXmark} />
           ) : value === "prof" ? (
             "до 1 операции"
           ) : value === "business" ? (
@@ -107,6 +107,7 @@ const TariffPlan = ({ value }) => {
             <FontAwesomeIcon className=' text-red-500' icon={faXmark} />
           )}
         </li>
+        <li className=''></li>
       </ul>
     </div>
   );
