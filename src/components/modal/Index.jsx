@@ -3,21 +3,17 @@ import { Dialog, Transition } from "@headlessui/react";
 import React, { Fragment, useState } from "react";
 
 const Index = ({ open }) => {
-  let [isOpen, setIsOpen] = useState(true);
+  let [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
-    setIsOpen(false);
-  }
-
-  function openModal() {
-    setIsOpen(true);
+    setIsOpen(!isOpen);
   }
   if (!open){
     return null
   }else return (
     <>
 
-      <Transition appear show={isOpen} as={Fragment}>
+      <Transition appear show={isOpen||open} as={Fragment}>
 
         <Dialog as='div' className='relative z-10' onClose={closeModal}>
           <Transition.Child
