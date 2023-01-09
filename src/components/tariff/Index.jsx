@@ -68,14 +68,16 @@ const Index = () => {
                                 data-tooltip-content='Внешнеэкономическая Деятельность'
                                 data-tooltip-place='top'
                                 id='VED'
+                                className='relative'
                             >
                                 Вэд / Еаэс
                                 <FontAwesomeIcon
                                     className=' absolute top-0 text-[10px]'
                                     icon={faQuestion}
                                 />
+                                <Tooltip anchorId='VED'/>
                             </p>
-                            <Tooltip anchorId='VED'/>
+
                         </li>
                         <li>
                             <p>1С В Облаке (1 Пользователь)</p>
