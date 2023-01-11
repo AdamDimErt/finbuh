@@ -26,14 +26,13 @@ const AdminPanel = () => {
 
     const deleteClient = async (id) => {
         const docRef = doc(db, "users", id);
-        deleteDoc(docRef)
+        await deleteDoc(docRef)
         dispatch(fetchClient())
     }
 
     // user jwt token
     const token = window.localStorage.getItem("token");
     const user = jwtDecode(token);
-    const [users, setUsers] = useState([])
     const clients = useSelector(
         (state) => state.user.clients
     );
@@ -56,7 +55,7 @@ const AdminPanel = () => {
 
     return (
         <div>
-            <button onClick={() => test()}>click</button>
+
             <h2 className='text-4xl  text-center pt-10'>Admin Panel</h2>
             <h3 className='text-2xl'>Добро пажаловать {user.name}</h3>{" "}
             <div className='w-full'>
@@ -89,7 +88,6 @@ const AdminPanel = () => {
                                                 </td>
                                                 <td className='px-6 py-4'>
                                                     <InputMask
-                                                        placeholder='+7 (707) 777 77 77'
                                                         mask='+7 (999)-999-99-99'
                                                         ref={ClientRef}
                                                         className='text-sm text-gray-500 text-center'
@@ -102,22 +100,22 @@ const AdminPanel = () => {
                                                     <p>{client.time}</p>
                                                 </td>
                                                 <td className='px-6 py-4 text-center'>
-                                                    <a
+                                                    <button
 
                                                         className='px-4 py-1 text-sm text-blue-600 bg-blue-200 rounded-full text-center cursor-pointer'
                                                         onClick={() => disableClick()}
                                                     >
                                                         Изменить
-                                                    </a>
+                                                    </button>
                                                 </td>
                                                 <td className='px-6 py-4 text-center'>
-                                                    <a
-                                                        href='#'
-                                                        className='px-4 py-1 text-sm text-red-400 bg-red-200 rounded-full'
+                                                    <p
+
+                                                        className='px-4 py-1 text-sm text-red-400 bg-red-200 rounded-full cursor-pointer'
                                                         onClick={() => deleteClient(client.id)}
                                                     >
                                                         Удалить
-                                                    </a>
+                                                    </p>
                                                 </td>
                                             </tr>
                                         );
