@@ -47,8 +47,8 @@ const AdminPanel = () => {
     // навигация на главную страницу
     useEffect(() => {
         dispatch(fetchClient())
-        console.log(clients)
-    }, [])
+
+    }, [dispatch])
     if (!window.localStorage.getItem("token") && !isAuth) {
         return <Navigate to='/login'/>;
     }
