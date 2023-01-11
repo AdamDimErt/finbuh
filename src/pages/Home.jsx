@@ -7,14 +7,16 @@ import Feedback from "../components/feedback/Index";
 import Tariff from "../components/tariff/Index";
 import Main from '../components/main/Index'
 
-const Home = () => {
+const Home = ({mainRef, tariffRef, feedbackRef, calcRef, certificateRef}) => {
+
+
     return (
         <>
-            <Main/>
-            <Tariff/>
-            <Feedback/>
-            <Calculator/>
-            <Slider/>
+            <Main feedbackRef={feedbackRef} mainRef={mainRef}/>
+            <Tariff tariffRef={tariffRef}/>
+            <Feedback feedbackRef={feedbackRef}/>
+            <Calculator calcRef={calcRef}/>
+            <Slider certificateRef={certificateRef}/>
         </>
     );
 };

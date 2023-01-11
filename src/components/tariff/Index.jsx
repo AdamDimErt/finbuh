@@ -9,9 +9,9 @@ import {faQuestion} from "@fortawesome/free-solid-svg-icons";
 
 import TariffPlan from "./TariffPlan";
 
-const Index = () => {
+const Index = ({tariffRef}) => {
     return (
-        <div className='bg-white p-10'>
+        <div ref={tariffRef} className='bg-white p-10'>
             <h1 className='text-center text-3xl'>Наши тарифы услуг</h1>
             <div className='tariff pt-20 flex justify-center'>
                 <div className=''>

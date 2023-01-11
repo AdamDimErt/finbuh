@@ -1,35 +1,47 @@
 /** @format */
-import { db } from "../../../firebase-config";
-import { collection, getDocs } from "firebase/firestore";
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import {collection, getDocs} from "firebase/firestore";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {db} from "../../../firebase-config";
+import moment from "moment";
+import 'moment/locale/ru'
 
 const initialState = {
-  client: [],
-  status: "loading",
+
+    clients: [],
+    status: 'loading'
+
 };
 
 
 export const fetchClient = createAsyncThunk("client/fetchClient", async () => {
+    const colRef = collection(db, "users");
+    const data = await getDocs(colRef);
+    const client = data.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+        time: moment.unix(doc._document.createTime.timestamp.seconds).locale('ru').format("llll")
 
+    }))
+    return client
 });
 
 const clientSlice = createSlice({
-  name: "client",
-  initialState,
-  extraReducers: {
-    [fetchClient.pending]: (state) => {
-      state.status = "loading";
-      state.client = [];
+    name: "client",
+    initialState,
+    extraReducers: {
+        [fetchClient.pending]: (state) => {
+            state.status = "loading";
+            state.clients = [];
+        },
+        [fetchClient.fulfilled]: (state, action) => {
+            state.status = "loaded";
+            state.clients = [...action.payload];
+        },
+        [fetchClient.rejected]: (state) => {
+            state.status = "error";
+            state.clients = [];
+        },
     },
-    [fetchClient.fulfilled]: (state, action) => {
-      state.status = "loaded";
-      state.client = [...action.payload];
-    },
-    [fetchClient.rejected]: (state) => {
-      state.status = "error";
-      state.client = [];
-    },
-  },
 });
 
 export const clientReducer = clientSlice.reducer;
