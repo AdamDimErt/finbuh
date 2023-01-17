@@ -1,8 +1,9 @@
-.item{
-display: flex;
-    border: 1px solid #000;
-    text-align: center;
+.slick-arrow {
+    display: none !important;
 }
-.alice-carousel{
-    max-width: 1400px;
+
+.slide {
+    width: 300px !important;
+    max-width: 100%;
+    height: 200px !important;
 }

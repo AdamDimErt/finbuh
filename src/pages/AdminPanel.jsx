@@ -2,53 +2,72 @@
 
 import React, {useEffect, useRef, useState} from "react";
 
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import {isAuthSelector} from "../store/slice/auth/auth";
 import jwtDecode from "jwt-decode";
 
 import {Navigate} from "react-router-dom";
-
+import {collection, deleteDoc, doc, onSnapshot, updateDoc} from "firebase/firestore";
 import 'moment/locale/ru'
 import {db} from "../firebase-config";
-import {deleteDoc, doc} from 'firebase/firestore'
-import {fetchClient} from "../store/slice/user/user";
 import InputMask from "react-input-mask";
+import moment from "moment";
 
 const AdminPanel = () => {
+
     const ClientRef = useRef('input')
-    console.log(ClientRef)
     const isAuth = useSelector(isAuthSelector);
     const [isDisabled, setIsDisabled] = useState(true);
+    const [data, setData] = useState([])
 
     const disableClick = () => {
         setIsDisabled(!isDisabled)
+
     };
 
     const deleteClient = async (id) => {
         const docRef = doc(db, "users", id);
         await deleteDoc(docRef)
-        dispatch(fetchClient())
+
+    }
+    const updateClient = async (id, e) => {
+        const docRef = doc(db, "users", id);
+        const newFileds = {telephone: e.target.value}
+        console.log(newFileds)
+        await updateDoc(docRef, newFileds)
     }
 
     // user jwt token
     const token = window.localStorage.getItem("token");
     const user = jwtDecode(token);
-    const clients = useSelector(
-        (state) => state.user.clients
-    );
-    console.log(clients)
-
-    const dispatch = useDispatch()
 
 
-    // const test = () => {
-    //     dispatch((fetchClient()))
-    // }
-    // навигация на главную страницу
     useEffect(() => {
-        dispatch(fetchClient())
+        const unsub = onSnapshot(collection(db, "users"), (doc) => {
+            const users = [];
+            doc.docs.forEach((doc) => {
+                users.push(
+                    {
+                        id: doc.id,
+                        name: doc.name,
+                        telephone: doc.telephone,
+                        time: moment.unix(doc._document.createTime.timestamp.seconds).locale('ru').format("llll"),
+                        ...doc.data()
+                    }
+                );
+                setData(users)
+            });
 
-    }, [dispatch])
+
+        });
+
+        return () => {
+            unsub()
+        }
+
+
+    }, [])
+
     if (!window.localStorage.getItem("token") && !isAuth) {
         return <Navigate to='/login'/>;
     }
@@ -75,7 +94,7 @@ const AdminPanel = () => {
                                     </tr>
                                     </thead>
                                     <tbody className='bg-white divide-y divide-gray-300'>
-                                    {clients.map((client) => {
+                                    {data.map((client) => {
                                         return (
                                             <tr key={client.id} className='whitespace-nowrap'>
                                                 <td className='px-6 py-4 text-sm text-center text-gray-500'>
@@ -93,6 +112,7 @@ const AdminPanel = () => {
                                                         className='text-sm text-gray-500 text-center'
                                                         placeholder={client.telephone}
                                                         disabled={isDisabled}
+                                                        onBlur={(e) => updateClient(client.id, e)}
 
                                                     ></InputMask>
                                                 </td>

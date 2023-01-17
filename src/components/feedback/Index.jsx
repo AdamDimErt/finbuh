@@ -126,6 +126,7 @@ const Index = ({feedbackRef}) => {
                             )} className='py-3 px-3  max-w-[896px] rounded-sm'
                                        placeholder='+7 (707) 777 77 77'
                                        mask='+7 (999)-999-99-99'/>
+
                         )}
                         control={control}
                         placeholder='+7 (707) 777 77 77'

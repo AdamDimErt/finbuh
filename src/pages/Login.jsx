@@ -29,7 +29,7 @@ const Login = () => {
     // fun login
     const login = async () => {
         const user = await dispatch(fetchAuth(data));
-
+        console.log(user)
         if (!user.payload) {
             alert("не удалось авторизоваться");
         } else

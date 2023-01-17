@@ -38,17 +38,17 @@ const Header = ({mainRef, tariffRef, calcRef, certificateRef, footerRef}) => {
     };
 
     return (
-        <div className='h-20 w-full'>
+        <div className='h-20  w-full '>
             <nav
 
                 className={`${
                     isScrolled && "bg-[#ffffffe6]"
-                } w-full  fixed top-0 pt-5 pb-5   mx-auto px-4 z-10 flex font-[Montserrat] items-center text-[#173a9a] justify-around`}
+                }  top-0 w-full pt-5 pb-5 fixed mx-auto px-4 z-10 flex font-[Montserrat] items-center text-[#173a9a] justify-around`}
             >
-                <div className='logo w-1/5 ml-5'>
+                <div className='logo grow  w-1/5 ml-5'>
                     <Link to='/' className='text-2xl '>FiNova</Link>
                 </div>
-                <ul className='lg:flex hidden w-3/5 space-x-10 xl:text-md md:text-sm justify-center '>
+                <ul className='lg:flex grow  hidden w-3/5 space-x-10 xl:text-md md:text-sm justify-center '>
                     <li className=''>
                         <Link to='/' onClick={() => handleScroll(mainRef.current)}
                               className='relative group cursor-pointer'>
@@ -104,7 +104,7 @@ const Header = ({mainRef, tariffRef, calcRef, certificateRef, footerRef}) => {
                         8-707 440 8018
                     </a>
                 </div>
-                <div className='flex relative'>
+                <div className='flex   relative'>
                     <label className='lg:block' htmlFor='check'>
                         <input
                             className='input'
@@ -117,7 +117,7 @@ const Header = ({mainRef, tariffRef, calcRef, certificateRef, footerRef}) => {
                         <span></span>
                     </label>
                     {isOpen ? (
-                        <ul className='absolute items-center border-2 border-[#5D001E] bg-[#fff] border-solid rounded-lg px-2 py-4 w-40 top-14 font-[Montserrat] flex flex-col right-0'>
+                        <ul className='absolute  items-center border-2 border-[#5D001E] bg-[#fff] border-solid rounded-lg px-2 py-4 w-40 top-14 font-[Montserrat] flex flex-col right-0'>
                             <li className='mb-4'>
                                 <Link to='/' onClick={() => handleScroll(mainRef.current)}>О нас</Link>
                             </li>
