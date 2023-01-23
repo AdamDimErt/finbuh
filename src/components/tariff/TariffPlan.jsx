@@ -109,17 +109,17 @@ const TariffPlan = ({value}) => {
                 </li>
                 <li>
                     {value === "start" ? (
-                        <h3 className='font-bold'> 60 000,00 ₸
+                        <h3 className='font-bold'> 60 000 ₸
                         </h3>
 
                     ) : value === "standard" ? (
-                        <h3 className='font-bold'>95 000,00 ₸</h3>
+                        <h3 className='font-bold'>95 000 ₸</h3>
 
                     ) : value === "prof" ? (
-                        <h3 className='font-bold'>180 000,00 ₸</h3>
+                        <h3 className='font-bold'>180 000 ₸</h3>
 
                     ) : value === "business" ? (
-                        <h3 className='font-bold'>275 000,00 ₸</h3>
+                        <h3 className='font-bold'>275 000 ₸</h3>
 
                     ) : null}
                 </li>

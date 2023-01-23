@@ -18,3 +18,17 @@
         width: 400px;
     }
 }
+
+@media screen and (max-width: 425px) {
+    .form {
+        width: 280px;
+    }
+
+    .form input {
+
+    }
+
+    .form button {
+        width: 270px;
+    }
+}
