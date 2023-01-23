@@ -26,11 +26,13 @@ const Index = () => {
             alt: 'text'
         }
     ]
+
+
     const settings = {
         dots: false,
         infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
+        slidesToShow: window.innerWidth === 320 ? 3 : 3,
+        slidesToScroll: 3,
         arrows: true,
         autoplay: true,
         speed: 4000,

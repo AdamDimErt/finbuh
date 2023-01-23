@@ -43,13 +43,13 @@ const Index = ({calcRef}) => {
         <div className={'backcalc'}>
             <h1 className='mt-8 text-3xl  font-bold text-center mb-10 '>Калькулятор цен</h1>
             <div ref={calcRef}
-                 className=' bg-white flex-wrap calculator justify-between max-w-[1000px] m-[auto] p-5 border-4 rounded-lg flex'>
+                 className=' bg-white justify-center flex-wrap calculator justify-between max-w-[1000px] m-[auto] p-5 border-4 rounded-lg flex'>
 
 
-                <div className='section flex flex-col items-center'>
+                <div className='section width300 flex flex-col items-center'>
 
                     <div className='w-[300px] flex flex-col mb-[50px]'>
-                        <h4 className='mb-[6px]'>Организационно-правовая форма:</h4>
+                        <h4 className='mb-[6px] widthText'>Организационно-правовая форма:</h4>
                         <div className='flex'>
                             <button
                                 onClick={toogleForm}
@@ -72,20 +72,20 @@ const Index = ({calcRef}) => {
                         </div>
                     </div>
                     <div className=''>
-                        <p className=' text-2xl w-80 mb-6'>Укажите количество документов в месяц:</p>
+                        <p className=' text-2xl  w-80 mb-6 width300'>Укажите количество документов в месяц:</p>
                         <input
                             onChange={upgradeDocs}
-                            className=' w-full h-10 text-lg text-center border bg-gray-100 border-gray-300 rounded-lg '
+                            className=' w-full inputPrice h-10 text-lg text-center border bg-gray-100 border-gray-300 rounded-lg '
                             type='number'
                             min='0'
                         />
                     </div>
-                    <div className=''>
-                        <p className='text-2xl w-80 mb-6'>Количество Сотрудников:</p>
+                    <div className='width300'>
+                        <p className='text-2xl width300 w-80 mb-6'>Количество Сотрудников:</p>
                         <input
                             min='0'
                             onChange={upgradeEmpl}
-                            className=' w-full h-10 text-lg text-center border bg-gray-100 border-gray-300 rounded-lg '
+                            className=' w-full inputPrice h-10 text-lg text-center border bg-gray-100 border-gray-300 rounded-lg '
                             type='number'
                         />
                     </div>
@@ -130,13 +130,14 @@ const Index = ({calcRef}) => {
                 <div className='section w-[300px] flex items-center text-center flex-col text-2xl m-auto'>
                     <p className='mb-20'>Ваш оптимальный тариф почти готов</p>
                     <h2 className=' text-4xl mb-4'>СТОИМОСТЬ:</h2>
-                    <div className='w-[300px]'>
-                        {" "}
-                        <h1 className=' text-6xl border border-[#173A9A] rounded-2xl p-5'>
+                    <div className='w-[300px] price'>
+
+                        <h1 className='price text-6xl border border-[#173A9A] rounded-2xl p-5'>
                             {price + docs * 1000 + employee * 1000} <span className=' text-2xl'>₸</span>
                         </h1>
                     </div>
-                    <button className='border mt-7 p-2 border-[#173A9A] bg-[#173A9A] rounded-xl text-[#fff]'>
+                    <button
+                        className='border buttonPrice mt-7 p-2 border-[#173A9A] bg-[#173A9A] rounded-xl text-[#fff]'>
                         Получить предоложение
                     </button>
                 </div>

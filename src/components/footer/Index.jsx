@@ -6,14 +6,18 @@ import {faInstagram, faTelegram, faWhatsapp} from "@fortawesome/free-brands-svg-
 import {Map, Placemark, YMaps} from "@pbe/react-yandex-maps";
 import {faEnvelopeSquare, faPhone} from "@fortawesome/free-solid-svg-icons";
 
+import './style.css'
+
 const Index = ({footerRef}) => {
     const defaultState = {
         center: [43.181897, 76.85248],
         zoom: 6,
     };
     return (
-        <div ref={footerRef} className='footer shadow-inner flex justify-center flex-wrap bg-[#fff] h-[300px]'>
-            <div className='flex mt-7 flex-wrap container justify-between w-[1280px]'>
+        <div ref={footerRef}
+             className=' shadow-inner text-[#173a9a] flex justify-center flex-wrap bg-[#e7f3fe] h-100%'>
+            <div className='footer flex mt-7 flex-wrap container justify-between w-[1280px]'>
+                {/*Блок контактов*/}
                 <div className='section flex flex-col justify-between '>
                     <div className='logo text-3xl'>FiNova</div>
                     <div className='icons flex'>
@@ -64,9 +68,9 @@ const Index = ({footerRef}) => {
                         </a>
                     </div>
                 </div>
-
+                {/*блок навигации*/}
                 <div className='section list-none'>
-                    <h3 className='mb-6 font-bold text-2xl border-b-2'>Ссылки</h3>
+                    <h3 className='mb-6 font-bold text-2xl border-b-2 border-[#173A9A]'>Навигация</h3>
                     <ul>
                         <li className='mb-4'>
                             <a href='/#' className='relative group cursor-pointer'>
@@ -105,7 +109,9 @@ const Index = ({footerRef}) => {
                         </li>
                     </ul>
                 </div>
+                {/*Блок карты яндекс*/}
                 <div className='section'>
+                    <h3 className='mb-6 font-bold text-2xl border-b-2 border-[#173A9A]'>Карты</h3>
                     <YMaps>
                         <Map defaultState={defaultState}>
                             <Placemark geometry={[55.684758, 37.738521]}/>

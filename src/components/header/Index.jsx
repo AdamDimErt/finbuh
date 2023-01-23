@@ -38,7 +38,7 @@ const Header = ({mainRef, tariffRef, calcRef, certificateRef, footerRef}) => {
     };
 
     return (
-        <div className='h-20 w-full '>
+        <div className='h-20 w-full bg-[#e7f3fe]'>
             <nav
 
                 className={`${

@@ -3,3 +3,29 @@
     color: #fff;
 }
 
+.price {
+
+}
+
+@media screen and (max-width: 768px) {
+    .price {
+        font-size: 2.75rem;
+        width: 240px;
+    }
+
+    .inputPrice {
+        width: 260px;
+    }
+
+
+}
+
+@media screen and (max-width: 340px) {
+    .width300 {
+        width: 300px;
+    }
+
+    .widthText {
+        font-size: 14px;
+    }
+}
