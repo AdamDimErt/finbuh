@@ -16,7 +16,7 @@ const Index = ({tariffRef}) => {
             <div className='tariff pt-20 flex justify-center'>
                 <div className=''>
                     <h3 className='text-center text-xl font-bold mb-5'>Услуги</h3>
-                    <ul className='flex flex-col items-center justify-between h-[500px] p-4'>
+                    <ul className='flex flex-col items-center justify-between min-w-[320px] h-[500px] p-4'>
                         <li>
                             <p
                                 id='docs'
@@ -102,10 +102,13 @@ const Index = ({tariffRef}) => {
                         </li>
                     </ul>
                 </div>
-                <TariffPlan value='start'/>
-                <TariffPlan value='standard'/>
-                <TariffPlan value='prof'/>
-                <TariffPlan value='business'/>
+                <div className="over overflow-x-scroll flex">
+                    <TariffPlan value='start'/>
+                    <TariffPlan value='standard'/>
+                    <TariffPlan value='prof'/>
+                    <TariffPlan value='business'/>
+                </div>
+
             </div>
         </div>
 

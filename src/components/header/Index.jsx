@@ -34,16 +34,16 @@ const Header = ({mainRef, tariffRef, calcRef, certificateRef, footerRef}) => {
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
-        console.log(isOpen);
+
     };
 
     return (
-        <div className='h-20  w-full '>
+        <div className='h-20 w-full '>
             <nav
 
                 className={`${
                     isScrolled && "bg-[#ffffffe6]"
-                }  top-0 w-full pt-5 pb-5 fixed mx-auto px-4 z-10 flex font-[Montserrat] items-center text-[#173a9a] justify-around`}
+                }  custom pt-5 pb-5  mx-auto px-4 z-10 flex font-[Montserrat] items-center text-[#173a9a] justify-around`}
             >
                 <div className='logo grow  w-1/5 ml-5'>
                     <Link to='/' className='text-2xl '>FiNova</Link>
@@ -92,7 +92,7 @@ const Header = ({mainRef, tariffRef, calcRef, certificateRef, footerRef}) => {
                         </Link>
                     </li>
                 </ul>
-                <div className='flex w-1/4 justify-center'>
+                <div className='flex grow w-1/4 justify-center'>
                     <a
                         href='tel:8-707-550-80-18'
                         className='cursor-pointer mr-3 underline underline-offset-4 duration-300 ease-in-out decoration-blue-500/[.33] hover:decoration-blue-500 transition'

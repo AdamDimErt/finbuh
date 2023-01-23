@@ -8,8 +8,8 @@ const Index = ({mainRef, feedbackRef}) => {
     return (
         <div ref={mainRef} className='main  h-screen mb-12 bg-fixed  bg-cover custom-img relative'>
             <div
-                className="block text-[#190550] w-[18rem] xl:top-[15rem] xl:left-[26rem]    md:top-[16rem] md:left-[13rem] absolute ">
-                <h2 className='xl:text-3xl md:text-2xl'>{data >= 6 ? <h3>Доброе утро</h3> : data >= 13 ?
+                className="block text-[#190550] w-[18rem] xl:top-[15rem] xl:left-[26rem]    md:top-[16rem] md:left-[13rem] absolute bg-white p-4 rounded-2xl">
+                <h2 className='xl:text-3xl md:text-2xl'>{data >= 14 ? <h3>Доброе утро</h3> : data => 14 ?
                     <h3>добрый день</h3> : data >= 18 ? <h3>Добрый Вечер</h3> : data >= 22 ? <h3>Доброй ночи</h3> : null
                 }
                 </h2>

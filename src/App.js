@@ -26,7 +26,7 @@ function App() {
         <>
 
 
-            <div className='App bg-[#fff] static   '>
+            <div className='App bg-[#fff] relative box-border   '>
                 <Header mainRef={mainRef} feedbackRef={feedbackRef} calcRef={calcRef}
                         certificateRef={certificateRef} tariffRef={tariffRef} footerRef={footerRef}/>
                 <Routes>
@@ -36,7 +36,7 @@ function App() {
                            />}/>
 
                     <Route path='*' element={<NotFound/>}/>
-                    <Route path='login' element={<Login/>}/>
+                    <Route path='/login' element={<Login/>}/>
                     <Route path='/admin' element={<AdminPanel/>}/>
                 </Routes>
                 <Footer footerRef={footerRef}/>

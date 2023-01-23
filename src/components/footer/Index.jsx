@@ -12,8 +12,8 @@ const Index = ({footerRef}) => {
         zoom: 6,
     };
     return (
-        <div ref={footerRef} className='footer shadow-inner flex justify-center bg-[#fff] h-[300px]'>
-            <div className='flex mt-7 container justify-between w-[1280px]'>
+        <div ref={footerRef} className='footer shadow-inner flex justify-center flex-wrap bg-[#fff] h-[300px]'>
+            <div className='flex mt-7 flex-wrap container justify-between w-[1280px]'>
                 <div className='section flex flex-col justify-between '>
                     <div className='logo text-3xl'>FiNova</div>
                     <div className='icons flex'>

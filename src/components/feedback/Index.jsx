@@ -7,6 +7,8 @@ import {addDoc, collection} from "firebase/firestore";
 import {db} from "../../firebase-config";
 import {Dialog, Transition} from "@headlessui/react";
 
+import './index.css'
+
 const Index = ({feedbackRef}) => {
 
     let [isOpen, setIsOpen] = useState(false);
@@ -92,7 +94,7 @@ const Index = ({feedbackRef}) => {
                     </div>
                 </Dialog>
             </Transition>
-            <div ref={feedbackRef} className='flex mt-7  flex-col items-center bg-[#E3E2DF]'>
+            <div ref={feedbackRef} className='flex mt-7 buh  flex-col items-center bg-[#E3E2DF]'>
                 <h3 className='mt-4 mb-6 text-2xl'>Оставте вашу заявку</h3>
                 <form onSubmit={handleSubmit(onSubmit)} className="form flex flex-col justify-center">
                     <label htmlFor="name">Имя</label>
@@ -109,10 +111,10 @@ const Index = ({feedbackRef}) => {
                             }
                         })}
                         placeholder='Фио'
-                        className='py-3 px-3 mb-2  max-w-[896px] rounded-sm'
+                        className='py-3 bg-[#94c4fe] placeholder-white text-white px-3 mb-2  max-w-[896px] rounded-sm'
                         type='text'
                     />
-                    {errors.name && <p className='w-50 text-red-600 text-sm'>{errors.name.message}</p>}
+                    {errors.name && <p className='w-50 text-[#ff1f00] font-bold text-sm'>{errors.name.message}</p>}
 
                     <label className="w-40 mt-4">Номер телефона</label>
                     <Controller
@@ -123,7 +125,7 @@ const Index = ({feedbackRef}) => {
                                     required: true,
                                     validate: validTel
                                 }
-                            )} className='py-3 px-3  max-w-[896px] rounded-sm'
+                            )} className='py-3 px-3 text-white bg-[#94c4fe] placeholder-white  max-w-[896px] rounded-sm'
                                        placeholder='+7 (707) 777 77 77'
                                        mask='+7 (999)-999-99-99'/>
 
@@ -132,12 +134,13 @@ const Index = ({feedbackRef}) => {
                         placeholder='+7 (707) 777 77 77'
                         mask='+7 (999)-999-99-99'
                         name="telephone"
-                        className='py-3 px-3 w-[56rem] rounded-sm'
+                        className='py-3  px-3 w-[56rem] rounded-sm'
 
                     />
-                    {errors.telephone && <p className='w-50 text-red-600 text-sm'>Введите номер телефона</p>}
+                    {errors.telephone &&
+                        <p className='w-50 text-[#ff1f00] font-bold text-sm'>Введите номер телефона</p>}
                     <button
-                        className='w-[35rem] mb-10 mt-6 py-3 px-3 rounded-xl text-white bg-blue-800 m-auto'
+                        className='w-[35rem] bg-[#173a9a] mb-10 mt-6 py-3 px-3 rounded-xl text-white bg-[#7e85bc] m-auto'
                         type='submit'
                     >
                         Отправить заявку

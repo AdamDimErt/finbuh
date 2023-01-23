@@ -40,7 +40,7 @@ const Index = ({calcRef}) => {
 
     return (
 
-        <>
+        <div className={'backcalc'}>
             <h1 className='mt-8 text-3xl  font-bold text-center mb-10 '>Калькулятор цен</h1>
             <div ref={calcRef}
                  className=' bg-white flex-wrap calculator justify-between max-w-[1000px] m-[auto] p-5 border-4 rounded-lg flex'>
@@ -92,7 +92,7 @@ const Index = ({calcRef}) => {
                 </div>
                 <div className='section w-[300px]  flex flex-col'>
                     <h4 className='mb-[6px]'>Режим налогообложения:</h4>
-                    <div className=' w-[30rem] flex'>
+                    <div className='  flex'>
                         <button
                             onClick={toogleTax}
                             className={
@@ -127,7 +127,7 @@ const Index = ({calcRef}) => {
                         </ul>
                     </div>
                 </div>
-                <div className='section w-[300px] flex items-center text-center flex-col text-2xl'>
+                <div className='section w-[300px] flex items-center text-center flex-col text-2xl m-auto'>
                     <p className='mb-20'>Ваш оптимальный тариф почти готов</p>
                     <h2 className=' text-4xl mb-4'>СТОИМОСТЬ:</h2>
                     <div className='w-[300px]'>
@@ -141,7 +141,7 @@ const Index = ({calcRef}) => {
                     </button>
                 </div>
             </div>
-        </>
+        </div>
 
     );
 };

@@ -6,7 +6,7 @@ import {useSelector} from "react-redux";
 import {isAuthSelector} from "../store/slice/auth/auth";
 import jwtDecode from "jwt-decode";
 
-import {Navigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {collection, deleteDoc, doc, onSnapshot, updateDoc} from "firebase/firestore";
 import 'moment/locale/ru'
 import {db} from "../firebase-config";
@@ -67,14 +67,13 @@ const AdminPanel = () => {
 
 
     }, [])
-
+    const navigate = useNavigate()
     if (!window.localStorage.getItem("token") && !isAuth) {
-        return <Navigate to='/login'/>;
+        return navigate('/login');
     }
 
     return (
         <div>
-
             <h2 className='text-4xl  text-center pt-10'>Admin Panel</h2>
             <h3 className='text-2xl'>Добро пажаловать {user.name}</h3>{" "}
             <div className='w-full'>
