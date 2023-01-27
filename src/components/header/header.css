@@ -61,3 +61,22 @@ span:nth-of-type(3) {
     transform: translate(10px, -9px) rotatez(45deg);
 
 }
+
+@media screen and (max-width: 425px) {
+    .telephone {
+        font-size: 14px;
+    }
+
+
+}
+
+@media screen and (max-width: 320px) {
+    .telephone {
+        font-size: 12px;
+    }
+
+    .logo {
+        width: 1px;
+    }
+
+}

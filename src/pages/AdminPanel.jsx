@@ -2,7 +2,7 @@
 
 import React, {useEffect, useRef, useState} from "react";
 
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {isAuthSelector} from "../store/slice/auth/auth";
 import jwtDecode from "jwt-decode";
 
@@ -40,7 +40,7 @@ const AdminPanel = () => {
     // user jwt token
     const token = window.localStorage.getItem("token");
     const user = jwtDecode(token);
-
+    const dispatch = useDispatch()
 
     useEffect(() => {
         const unsub = onSnapshot(collection(db, "users"), (doc) => {
@@ -60,7 +60,7 @@ const AdminPanel = () => {
 
 
         });
-
+        
         return () => {
             unsub()
         }
@@ -80,7 +80,7 @@ const AdminPanel = () => {
                 <div className=' flex justify-center w-full mx-auto'>
                     <div className='flex flex-col w-full'>
                         <div className='w-full'>
-                            <div className='border-b border-gray-200 shadow'>
+                            <div className='border-b overflow-x-auto border-gray-200 shadow'>
                                 <table className='divide-y divide-gray-300 w-full'>
                                     <thead className='bg-gray-50'>
                                     <tr>

@@ -31,7 +31,7 @@ const Index = () => {
     const settings = {
         dots: false,
         infinite: true,
-        slidesToShow: window.innerWidth === 320 ? 3 : 3,
+        slidesToShow: 1,
         slidesToScroll: 3,
         arrows: true,
         autoplay: true,

@@ -29,3 +29,13 @@
         font-size: 14px;
     }
 }
+
+@media screen and (max-width: 320px) {
+    .width300 {
+        width: 280px;
+    }
+
+    .widthText {
+        font-size: 14px;
+    }
+}

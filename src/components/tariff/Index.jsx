@@ -8,10 +8,11 @@ import "react-tooltip/dist/react-tooltip.css";
 import {faQuestion} from "@fortawesome/free-solid-svg-icons";
 
 import TariffPlan from "./TariffPlan";
+import './style.css'
 
 const Index = ({tariffRef}) => {
     return (
-        <div ref={tariffRef} className='bg-white p-10'>
+        <div ref={tariffRef} className='uslugContainer bg-white p-10'>
             <h1 className='text-center text-3xl'>Наши тарифы услуг</h1>
             <div className='tariff pt-20 flex justify-center'>
                 <div className=''>
@@ -20,7 +21,7 @@ const Index = ({tariffRef}) => {
                 <div className="over overflow-x-scroll flex">
                     <div>
                         <h3 className='text-center text-xl font-bold mb-5'>Услуги</h3>
-                        <ul className='flex flex-col items-center justify-between min-w-[320px] h-[500px] p-4'>
+                        <ul className='flex flex-col items-center uslug justify-between min-w-[320px] h-[500px] p-4'>
                             <li>
                                 <p
                                     id='docs'

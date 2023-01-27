@@ -95,10 +95,10 @@ const Header = ({mainRef, tariffRef, calcRef, certificateRef, footerRef}) => {
                 <div className='flex grow w-1/4 justify-center'>
                     <a
                         href='tel:8-707-550-80-18'
-                        className='cursor-pointer mr-3 underline underline-offset-4 duration-300 ease-in-out decoration-blue-500/[.33] hover:decoration-blue-500 transition'
+                        className='cursor-pointer telephone mr-3 underline underline-offset-4 duration-300 ease-in-out decoration-blue-500/[.33] hover:decoration-blue-500 transition'
                     >
                         <FontAwesomeIcon
-                            className='w-8 mt-1 h-5 hover:text-[#54b459]'
+                            className='w-8 mt-1 h-5 hover:text-[#54b459] '
                             icon={faPhoneSquare}
                         />
                         8-707 440 8018
