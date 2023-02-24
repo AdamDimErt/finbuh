@@ -2,7 +2,7 @@
 
 import React, {useEffect, useRef, useState} from "react";
 
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import {isAuthSelector} from "../store/slice/auth/auth";
 
 import {useNavigate} from "react-router-dom";
@@ -38,8 +38,6 @@ const AdminPanel = () => {
 
     // user jwt token
 
-
-    const dispatch = useDispatch()
 
     useEffect(() => {
         const unsub = onSnapshot(collection(db, "users"), (doc) => {
