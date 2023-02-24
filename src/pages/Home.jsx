@@ -6,6 +6,7 @@ import Slider from "../components/slider/index";
 import Feedback from "../components/feedback/Index";
 import Tariff from "../components/tariff/Index";
 import Main from '../components/main/Index'
+import Work from '../components/Work/Index'
 
 const Home = ({mainRef, tariffRef, feedbackRef, calcRef, certificateRef}) => {
 
@@ -17,7 +18,7 @@ const Home = ({mainRef, tariffRef, feedbackRef, calcRef, certificateRef}) => {
             <Feedback feedbackRef={feedbackRef}/>
             <Calculator calcRef={calcRef}/>
             <Slider certificateRef={certificateRef}/>
-            {/*<Work/>*/}
+            <Work/>
         </>
     );
 };

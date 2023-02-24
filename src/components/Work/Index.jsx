@@ -5,7 +5,7 @@ const Index = () => {
     return (
         <div className='work h-[70vh] m-auto flex-col  flex justify-around'>
             <h2 className='text-3xl font-bold text-center'>Как мы работаем</h2>
-            <div className="flex justify-around">
+            <div className="flex justify-around workContain">
                 <div
                     className="bord ">
                     <p className={'w-7 h-7 absolute top-1 left-1 rounded-[50%] flex border-[rgb(30 64 175 / 44%)] ' +

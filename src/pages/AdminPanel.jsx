@@ -4,7 +4,6 @@ import React, {useEffect, useRef, useState} from "react";
 
 import {useDispatch, useSelector} from "react-redux";
 import {isAuthSelector} from "../store/slice/auth/auth";
-import jwtDecode from "jwt-decode";
 
 import {useNavigate} from "react-router-dom";
 import {collection, deleteDoc, doc, onSnapshot, updateDoc} from "firebase/firestore";
@@ -38,8 +37,8 @@ const AdminPanel = () => {
     }
 
     // user jwt token
-    const token = window.localStorage.getItem("token");
-    const user = jwtDecode(token);
+
+
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -60,7 +59,7 @@ const AdminPanel = () => {
 
 
         });
-        
+
         return () => {
             unsub()
         }
@@ -75,7 +74,7 @@ const AdminPanel = () => {
     return (
         <div>
             <h2 className='text-4xl  text-center pt-10'>Admin Panel</h2>
-            <h3 className='text-2xl'>Добро пажаловать {user.name}</h3>{" "}
+            <h3 className='text-2xl'>Добро пажаловать</h3>{" "}
             <div className='w-full'>
                 <div className=' flex justify-center w-full mx-auto'>
                     <div className='flex flex-col w-full'>

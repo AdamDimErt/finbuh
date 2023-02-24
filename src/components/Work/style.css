@@ -17,3 +17,19 @@
     justify-content: center;
     border-radius: 10px;
 }
+
+.workContain {
+    flex-wrap: wrap;
+
+}
+
+.workContain div {
+    margin-bottom: 20px;
+
+}
+
+@media screen and (max-width: 500px) {
+    .work {
+        height: 100%;
+    }
+}

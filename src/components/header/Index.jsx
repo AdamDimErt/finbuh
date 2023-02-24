@@ -139,6 +139,8 @@ const Header = ({mainRef, tariffRef, calcRef, certificateRef, footerRef}) => {
                     )}
                 </div>
             </nav>
+
+            <Link to={'/admin'}>admin</Link>
         </div>
     );
 };

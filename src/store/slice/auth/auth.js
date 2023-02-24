@@ -45,7 +45,8 @@ const authSlice = createSlice({
 });
 
 export const isAuthSelector = (state) => {
-
+    const token = localStorage.getItem('token')
+    console.log(token)
     return Boolean(state.auth.user);
 };
 

@@ -24,21 +24,38 @@ const Index = () => {
         {
             src: ImgCom,
             alt: 'text'
-        }
+        },
+        {
+            src: ImgCom,
+            alt: 'text'
+        },
+        {
+            src: ImgCom,
+            alt: 'text'
+        },
     ]
 
 
     const settings = {
         dots: false,
         infinite: true,
-        slidesToShow: 1,
+        slidesToShow: 3,
         slidesToScroll: 3,
         arrows: true,
         autoplay: true,
         speed: 4000,
         autoplaySpeed: 4000,
         nextArrow: null,
-        prevArrow: false
+        prevArrow: false,
+        responsive: [
+            {
+                breakpoint: 720,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     };
     return (
         <div>
