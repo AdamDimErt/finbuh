@@ -40,16 +40,16 @@ const Login = () => {
 
     return (
         <div>
-            <div className='h-[400px] w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 md:h-full'>
-                <div className='relative m-auto w-full h-full max-w-md md:h-auto'>
-                    <div className='relative bg-white rounded-lg shadow dark:bg-gray-700'>
+            <div className='h-full md:max-h-md w-full p-4 overflow-y-auto md:inset-0 md:h-full'>
+                <div className='relative mx-auto md:max-w-none w-full h-full md:h-auto'>
+                    <div className='relative bg-white rounded-lg overflow-hidden shadow dark:bg-gray-700'>
                         <div className='px-6 py-6 lg:px-8'>
-                            <h3 className='mb-4 text-xl font-medium text-gray-900 dark:text-white'>
+                            <h3 className='mb-4 text-lg font-medium text-gray-900 dark:text-white'>
                                 Войти в Админ панель
                             </h3>
                             <div className='space-y-6'>
                                 <div>
-                                    <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'>
+                                    <label className=' mb-2 text-sm font-medium text-gray-900 dark:text-white'>
                                         Почта
                                     </label>
                                     <input
@@ -57,12 +57,12 @@ const Login = () => {
                                         type='email'
                                         name='email'
                                         id='email'
-                                        className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white'
+                                        className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white'
                                         placeholder='name@company.com'
                                     />
                                 </div>
                                 <div>
-                                    <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'>
+                                    <label className=' mb-2 text-sm font-medium text-gray-900 dark:text-white'>
                                         Пароль
                                     </label>
                                     <input
@@ -70,7 +70,7 @@ const Login = () => {
                                         type='password'
                                         name='password'
                                         placeholder='••••••••'
-                                        className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white'
+                                        className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white'
                                     />
                                 </div>
                                 <div className='flex justify-between'>
