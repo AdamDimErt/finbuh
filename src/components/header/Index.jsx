@@ -47,6 +47,7 @@ const Header = ({mainRef, tariffRef, calcRef, certificateRef, footerRef}) => {
             >
                 <div className='logo grow  w-1/5 ml-5'>
                     <Link to='/' className='text-2xl '>FiNova</Link>
+                    <Link to={'/admin'}>admin</Link>
                 </div>
                 <ul className='lg:flex grow  hidden w-3/5 space-x-10 xl:text-md md:text-sm justify-center '>
                     <li className=''>
@@ -140,7 +141,7 @@ const Header = ({mainRef, tariffRef, calcRef, certificateRef, footerRef}) => {
                 </div>
             </nav>
 
-            <Link to={'/admin'}>admin</Link>
+
         </div>
     );
 };
