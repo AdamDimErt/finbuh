@@ -40,7 +40,7 @@ const Login = () => {
 
     return (
         <div>
-            <div className=' w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 md:h-full'>
+            <div className='h-[400px] w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 md:h-full'>
                 <div className='relative m-auto w-full h-full max-w-md md:h-auto'>
                     <div className='relative bg-white rounded-lg shadow dark:bg-gray-700'>
                         <div className='px-6 py-6 lg:px-8'>
