@@ -113,7 +113,7 @@ const Index = ({feedbackRef}) => {
                         placeholder='Фио'
                         className='py-3 bg-[#94c4fe] placeholder-white text-white px-3 mb-2  max-w-[896px] rounded-sm'
                         type='text'
-                        type='password'
+                     
                     />
                     {errors.name && <p className='w-50 text-[#ff1f00] font-bold text-sm'>{errors.name.message}</p>}
 
