@@ -3,13 +3,14 @@
 import React, {useState} from "react";
 
 import {useDispatch, useSelector} from "react-redux";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 import {fetchAuth, isAuthSelector} from "../store/slice/auth/auth";
 
 const Login = () => {
     const navigate = useNavigate();
     const isAuth = useSelector(isAuthSelector);
+    const [error, setError] = useState(false)
     console.log(isAuth);
     const dispatch = useDispatch();
     // creation of fields for authorization
@@ -28,13 +29,17 @@ const Login = () => {
 
     // fun login
     const login = async () => {
-        const user = await dispatch(fetchAuth(data));
-        console.log(user)
-        if (!user.payload) {
-            alert("не удалось авторизоваться");
-        } else
-            window.localStorage.setItem("token", user.payload.user.accessToken);
-        navigate('/admin')
+        try {
+            const user = await dispatch(fetchAuth(data));
+            console.log(user)
+            if (!user.payload) {
+                alert("не удалось авторизоваться");
+            } else
+                window.localStorage.setItem("token", user.payload.user.accessToken);
+            navigate('/admin')
+        } catch (e) {
+            setError(true)
+        }
 
     };
 
@@ -75,24 +80,9 @@ const Login = () => {
                                 </div>
                                 <div className='flex justify-between'>
                                     <div className='flex items-start'>
-                                        <div className='flex items-center h-5'>
-                                            <input
-                                                id='remember'
-                                                type='checkbox'
-                                                value=''
-                                                className='w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800'
-                                            />
-                                        </div>
-                                        <label className='ml-2 text-sm font-medium text-gray-900 dark:text-gray-300'>
-                                            Запомнить меня
-                                        </label>
+
+                                        <p className={'text-red-500 text-[12px]'}>{error && 'ошибка неправильный логин или пароль'}</p>
                                     </div>
-                                    <Link
-                                        to='/'
-                                        className='text-sm text-blue-700 hover:underline dark:text-blue-500'
-                                    >
-                                        Забыли пароль
-                                    </Link>
                                 </div>
                                 <button
                                     onClick={login}

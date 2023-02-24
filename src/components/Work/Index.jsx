@@ -1,35 +1,44 @@
-import React from 'react';
-import './style.css'
+import React from "react";
+import {FaClipboardList, FaFileSignature, FaPhoneAlt, FaTools} from "react-icons/fa";
 
 const Index = () => {
+    const actions = [
+        {
+            title: "Оставляете заявку",
+            description: "Оставьте заявку на нашем сайте, и мы свяжемся с вами в ближайшее время",
+            icon: <FaClipboardList/>,
+        },
+        {
+            title: "Консультация",
+            description: "Наши специалисты ответят на все ваши вопросы и помогут выбрать лучшее решение",
+            icon: <FaPhoneAlt/>,
+        },
+        {
+            title: "Подписание договора",
+            description: "Подписывайте договор у нас в офисе или удаленно по электронной почте",
+            icon: <FaFileSignature/>,
+        },
+        {
+            title: "Начало работы",
+            description: "Наша команда профессионалов приступает к выполнению вашего проекта",
+            icon: <FaTools/>,
+        },
+    ];
+
     return (
-        <div className='work h-[70vh] m-auto flex-col  flex justify-around'>
-            <h2 className='text-3xl font-bold text-center'>Как мы работаем</h2>
-            <div className="flex justify-around workContain">
-                <div
-                    className="bord ">
-                    <p className={'w-7 h-7 absolute top-1 left-1 rounded-[50%] flex border-[rgb(30 64 175 / 44%)] ' +
-                        'border-2 items-center justify-center text-[12px] align-center'}>1</p>
-                    <h4 className={'text-xl font-bold'}>Оставляете заявку</h4>
-                    <p>Мы вам перезваниваем</p>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-6xl mx-auto px-4 py-8">
+            {actions.map((action) => (
+                <div key={action.title} className="bg-white shadow-lg rounded-lg overflow-hidden flex-1">
+                    <div className="p-4">
+                        <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                            {action.icon}
+                        </div>
+                        <h3 className="mt-4 text-lg font-medium text-gray-900">{action.title}</h3>
+                        <p className="mt-2 text-sm text-gray-500">{action.description}</p>
+
+                    </div>
                 </div>
-                <div className="bord  ">
-                    <p className={'w-7 h-7 absolute top-1 left-1 rounded-[50%] flex border-[rgb(30 64 175 / 44%)] ' +
-                        'border-2 items-center justify-center text-[12px] align-center'}>2</p>
-                    <h4>Консультация</h4>
-                    <p>Обговариваем действие </p>
-                </div>
-                <div className=" bord ">
-                    <p className={'w-7 h-7 absolute top-1 left-1 rounded-[50%] flex border-[rgb(30 64 175 / 44%)] ' +
-                        'border-2 items-center justify-center text-[12px] align-center'}>3</p>
-                    <h4>Подписание договора</h4>
-                </div>
-                <div className=" bord  ">
-                    <p className={'w-7 h-7 absolute top-1 left-1 rounded-[50%] flex border-[rgb(30 64 175 / 44%)] ' +
-                        'border-2 items-center justify-center text-[12px] align-center'}>4</p>
-                    <h4>Начало работы</h4>
-                </div>
-            </div>
+            ))}
         </div>
     );
 };
