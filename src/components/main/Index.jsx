@@ -19,7 +19,7 @@ const Index = ({mainRef, feedbackRef}) => {
     return (
         <div ref={mainRef} className="main h-screen mb-12 bg-fixed bg-cover custom-img relative">
             <div
-                className="shadow-2xl absolute block text-[#190550] w-[18rem] md:top-[16rem] md:left-[13rem] xl:top-[15rem] xl:left-[26rem] bg-white p-4 rounded-2xl">
+                className="shadow-2xl absolute block text-[#190550] w-[24rem] md:top-[16rem] md:left-[13rem] xl:top-[15rem] xl:left-[26rem] bg-white p-4 rounded-2xl">
                 <h2 className="xl:text-3xl md:text-2xl">{greeting}</h2>
                 <p className="xl:text-sm md:text-[12px]">
                     Вас приветсвует бухгалтерская аутсорсинг компания FiNova
