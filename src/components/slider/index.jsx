@@ -51,14 +51,14 @@ const Index = () => {
             {
                 breakpoint: 720,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 1,
                     slidesToScroll: 1
                 }
             }
         ]
     };
     return (
-        <div>
+        <div className={'mb-20'}>
             <h2 className={'text-2xl text-center mt-10 mb-10'}>Наши Сертификаты</h2>
             <Slider className='flex' {...settings}>
                 {img.map((im) => {

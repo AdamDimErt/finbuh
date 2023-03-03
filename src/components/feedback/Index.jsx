@@ -95,7 +95,7 @@ const Index = ({feedbackRef}) => {
                 </Dialog>
             </Transition>
             <div ref={feedbackRef} className='flex mt-7 buh  flex-col items-center bg-[#E3E2DF]'>
-                <h3 className='mt-4 mb-6 text-2xl'>Оставте вашу заявку</h3>
+                <h3 className='mt-4 mb-6 text-2xl text-[#fff]'>Оставте вашу заявку</h3>
                 <form onSubmit={handleSubmit(onSubmit)} className="form flex flex-col justify-center">
                     <label htmlFor="name">Имя</label>
                     <input
@@ -111,9 +111,9 @@ const Index = ({feedbackRef}) => {
                             }
                         })}
                         placeholder='Фио'
-                        className='py-3 bg-[#94c4fe] placeholder-white text-white px-3 mb-2  max-w-[896px] rounded-sm'
+                        className='py-3 bg-[#9da9b5] placeholder-white text-white px-3 mb-2  max-w-[896px] rounded-sm'
                         type='text'
-                     
+
                     />
                     {errors.name && <p className='w-50 text-[#ff1f00] font-bold text-sm'>{errors.name.message}</p>}
 
@@ -126,7 +126,7 @@ const Index = ({feedbackRef}) => {
                                     required: true,
                                     validate: validTel
                                 }
-                            )} className='py-3 px-3 text-white bg-[#94c4fe] placeholder-white  max-w-[896px] rounded-sm'
+                            )} className='py-3 px-3 text-white bg-[#9da9b5] placeholder-white  max-w-[896px] rounded-sm'
                                        placeholder='+7 (707) 777 77 77'
                                        mask='+7 (999)-999-99-99'/>
 

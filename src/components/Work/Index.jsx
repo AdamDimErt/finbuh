@@ -26,20 +26,26 @@ const Index = () => {
     ];
 
     return (
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-6xl mx-auto px-4 py-8">
-            {actions.map((action) => (
-                <div key={action.title} className="bg-white shadow-lg rounded-lg overflow-hidden flex-1">
-                    <div className="p-4">
-                        <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
-                            {action.icon}
-                        </div>
-                        <h3 className="mt-4 text-lg font-medium text-gray-900">{action.title}</h3>
-                        <p className="mt-2 text-sm text-gray-500">{action.description}</p>
+        <>
+            <h1 className={'text-4xl text-center mt-20 mb-10'}>Как мы работаем</h1>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-6xl mx-auto px-4 py-8">
 
+                {actions.map((action) => (
+                    <div key={action.title} className="bg-white shadow-lg rounded-lg overflow-hidden flex-1">
+                        <div className="p-4">
+                            <div
+                                className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                                {action.icon}
+                            </div>
+                            <h3 className="mt-4 text-lg font-medium text-gray-900">{action.title}</h3>
+                            <p className="mt-2 text-sm text-gray-500">{action.description}</p>
+
+                        </div>
                     </div>
-                </div>
-            ))}
-        </div>
+                ))}
+            </div>
+        </>
+
     );
 };
 

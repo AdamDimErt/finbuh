@@ -1,14 +1,17 @@
 ::-webkit-scrollbar-track {
 	background-color: #fff; /*Цвет скролла*/
-} 
-::-webkit-scrollbar-thumb { 
-	border-radius: 5px; /*Закругление ползунка*/
-	background-color: rgb(148, 196, 254); /*Цвет ползунка*/
-} 
-::-webkit-scrollbar { 
-	width: 6px;  /*Толщина скролла*/
 }
 
-*{
-    font-family: 'Montserrat', sans-serif;
+::-webkit-scrollbar-thumb {
+	border-radius: 5px; /*Закругление ползунка*/
+	background-color: rgb(148, 196, 254); /*Цвет ползунка*/
+}
+
+::-webkit-scrollbar {
+	width: 6px; /*Толщина скролла*/
+}
+
+* {
+	font-family: 'Montserrat', sans-serif;
+
 }

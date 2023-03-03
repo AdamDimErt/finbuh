@@ -1,0 +1,26 @@
+@media screen and (max-width: 768px) {
+    .exp__main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .exp__block {
+        border-right: none !important;
+        padding: 0px !important;
+        width: 200px;
+        align-items: center !important;
+        display: flex;
+    }
+}
+
+.exp__block {
+    border-right: 1px solid #000;
+    padding-right: 40px;
+    width: 200px;
+}
+
+.index {
+
+    color: #585859;
+}
