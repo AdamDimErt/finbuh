@@ -1,54 +1,74 @@
-/** @format */
-
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {auth} from "../../../firebase-config";
 
-import {signInWithEmailAndPassword} from "firebase/auth";
+import {signInWithEmailAndPassword, signOut,} from "firebase/auth";
 
 const initialState = {
     user: null,
-    status: "loading",
+    status: "idle",
 };
 
-export const fetchAuth = createAsyncThunk("auth/fetchAuth", async (data) => {
-    try {
-        const user = await signInWithEmailAndPassword(auth, data.email, data.password);
-        return user;
-    } catch (error) {
-        console.log(error);
+export const fetchAuth = createAsyncThunk(
+    "auth/fetchAuth",
+    async ({email, password}, {rejectWithValue}) => {
+        try {
+            const userCredential = await signInWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
+            return userCredential.user;
+        } catch (error) {
+            console.log(error);
+            return rejectWithValue(error.message);
+        }
     }
-});
+);
+
+export const logoutUser = createAsyncThunk(
+    "auth/logoutUser",
+    async (_, {rejectWithValue}) => {
+        try {
+            await signOut(auth);
+            return null;
+        } catch (error) {
+            console.log(error);
+            return rejectWithValue(error.message);
+        }
+    }
+);
 
 const authSlice = createSlice({
     name: "auth",
     initialState,
-    reducers: {
-        logout: (state) => {
-            state.user = null;
-        },
-    },
-    extraReducers: {
-        // login
-        [fetchAuth.pending]: (state) => {
-            state.status = "loading";
-            state.user = null;
-        },
-        [fetchAuth.fulfilled]: (state, action) => {
-            state.status = "loaded";
-            state.user = action.payload.user;
-        },
-        [fetchAuth.rejected]: (state) => {
-            state.status = "error";
-            state.user = null;
-        },
+    reducers: {},
+    extraReducers: (builder) => {
+        builder
+            // Login
+            .addCase(fetchAuth.pending, (state) => {
+                state.status = "loading";
+            })
+            .addCase(fetchAuth.fulfilled, (state, action) => {
+                state.status = "succeeded";
+                state.user = action.payload;
+                localStorage.setItem("user", JSON.stringify(action.payload));
+            })
+            .addCase(fetchAuth.rejected, (state) => {
+                state.status = "failed";
+            })
+            // Logout
+            .addCase(logoutUser.fulfilled, (state, action) => {
+                state.user = null;
+                localStorage.removeItem("user");
+            });
     },
 });
 
-export const isAuthSelector = (state) => {
-    const token = localStorage.getItem('token')
-    console.log(token)
-    return Boolean(state.auth.user);
-};
+export const selectUser = (state) => state.auth.user;
+export const selectAuthStatus = (state) => state.auth.status;
+
+// Добавляем селектор для проверки авторизации в localStorage
+export const isAuthSelector = (state) =>
+    Boolean(localStorage.getItem("user"))
 
 export const authReducer = authSlice.reducer;
-export const {logout} = authSlice.actions;

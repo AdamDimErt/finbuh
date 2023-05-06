@@ -24,17 +24,13 @@ function App() {
 
     return (
         <>
-
-
             <div className='App bg-[#fff] relative box-border   '>
                 <Header mainRef={mainRef} feedbackRef={feedbackRef} calcRef={calcRef}
                         certificateRef={certificateRef} tariffRef={tariffRef} footerRef={footerRef}/>
                 <Routes>
                     <Route path='/' index
                            element={<Home mainRef={mainRef} feedbackRef={feedbackRef} calcRef={calcRef}
-                                          certificateRef={certificateRef} tariffRef={tariffRef}
-                           />}/>
-
+                                          certificateRef={certificateRef} tariffRef={tariffRef}/>}/>
                     <Route path='*' element={<NotFound/>}/>
                     <Route path='/login' element={<Login/>}/>
                     <Route path='/admin' element={<AdminPanel/>}/>

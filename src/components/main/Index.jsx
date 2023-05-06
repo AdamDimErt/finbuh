@@ -16,6 +16,7 @@ const Index = ({mainRef, feedbackRef}) => {
         greeting = 'Доброй ночи';
     }
 
+
     return (
         <div ref={mainRef} className="main h-screen mb-12 bg-fixed bg-cover custom-img relative">
             <div

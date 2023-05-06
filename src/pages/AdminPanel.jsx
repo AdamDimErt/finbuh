@@ -1,10 +1,6 @@
-/** @format */
-
 import React, {useEffect, useRef, useState} from "react";
-
 import {useSelector} from "react-redux";
 import {isAuthSelector} from "../store/slice/auth/auth";
-
 import {useNavigate} from "react-router-dom";
 import {collection, deleteDoc, doc, onSnapshot, updateDoc} from "firebase/firestore";
 import 'moment/locale/ru'
@@ -19,10 +15,7 @@ const AdminPanel = () => {
     const [isDisabled, setIsDisabled] = useState(true);
     const [data, setData] = useState([])
 
-    const disableClick = () => {
-        setIsDisabled(!isDisabled)
-
-    };
+    const disableClick = () => setIsDisabled(!isDisabled);
 
     const deleteClient = async (id) => {
         const docRef = doc(db, "users", id);
@@ -35,10 +28,6 @@ const AdminPanel = () => {
         console.log(newFileds)
         await updateDoc(docRef, newFileds)
     }
-
-    // user jwt token
-
-
     useEffect(() => {
         const unsub = onSnapshot(collection(db, "users"), (doc) => {
             const users = [];
@@ -54,15 +43,10 @@ const AdminPanel = () => {
                 );
                 setData(users)
             });
-
-
         });
-
         return () => {
             unsub()
         }
-
-
     }, [])
     const navigate = useNavigate()
     if (!window.localStorage.getItem("token") && !isAuth) {

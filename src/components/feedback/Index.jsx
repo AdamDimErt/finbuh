@@ -14,13 +14,8 @@ const Index = ({feedbackRef}) => {
     let [isOpen, setIsOpen] = useState(false);
 
 
-    function closeModal() {
-        setIsOpen(!isOpen);
-    }
-
-    function openModal() {
-        setIsOpen(true)
-    }
+    const closeModal = () => setIsOpen(!isOpen);
+    const openModal = () => setIsOpen(true);
 
 
     const {register, handleSubmit, control, reset, formState: {errors}} = useForm();
@@ -78,7 +73,6 @@ const Index = ({feedbackRef}) => {
                                             наше звонка)
                                         </p>
                                     </div>
-
                                     <div className='mt-4'>
                                         <button
                                             type='button'

@@ -1,6 +1,4 @@
-/** @format */
-
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
@@ -10,16 +8,17 @@ import {fetchAuth, isAuthSelector} from "../store/slice/auth/auth";
 const Login = () => {
     const navigate = useNavigate();
     const isAuth = useSelector(isAuthSelector);
-    const [error, setError] = useState(false)
-    console.log(isAuth);
+    const [error, setError] = useState(false);
+
     const dispatch = useDispatch();
+
     // creation of fields for authorization
     const [data, setData] = useState({
         email: "",
         password: "",
     });
-    // set data in auth
 
+    // set data in auth
     const update = (e) => {
         setData({
             ...data,
@@ -31,18 +30,23 @@ const Login = () => {
     const login = async () => {
         try {
             const user = await dispatch(fetchAuth(data));
-            console.log(user)
+            console.log(user);
             if (!user.payload) {
                 alert("не удалось авторизоваться");
-            } else
-                window.localStorage.setItem("token", user.payload.user.accessToken);
-            navigate('/admin')
+            } else {
+                window.localStorage.setItem("user", user.payload.user.accessToken);
+                navigate("/admin");
+            }
         } catch (e) {
-            setError(true)
+            setError(true);
         }
-
     };
 
+    useEffect(() => {
+        if (isAuth) {
+            navigate("/admin");
+        }
+    }, [isAuth]);
     return (
         <div>
             <div className='h-full md:max-h-md w-full p-4 overflow-y-auto md:inset-0 md:h-full'>
