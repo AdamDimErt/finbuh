@@ -12,7 +12,7 @@ import './style.css'
 
 const Index = ({tariffRef}) => {
     return (
-        <div ref={tariffRef} className='uslugContainer bg-white p-10'>
+        <div id="sec1" ref={tariffRef} className='uslugContainer bg-white p-10'>
             <h1 className='text-center text-3xl'>Наши тарифы услуг</h1>
             <div className='tariff pt-20 flex justify-center'>
                 <div className=''>

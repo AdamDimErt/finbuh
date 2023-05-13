@@ -9,13 +9,16 @@ import {faPhoneSquare} from "@fortawesome/free-solid-svg-icons";
 import "./header.css";
 import {handleScroll} from "../../utils/Scroll";
 import {Link} from "react-router-dom";
+import {useScroll} from 'react-scroll'
 
 const Header = ({mainRef, tariffRef, calcRef, certificateRef, footerRef}) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const [isScrolled, setIsScrolled] = useState(false);
 
-
+    const toggleMenu = () => {
+        setIsOpen(!isOpen)
+    }
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 0) {
@@ -32,8 +35,8 @@ const Header = ({mainRef, tariffRef, calcRef, certificateRef, footerRef}) => {
         };
     }, []);
 
-    const toggleMenu = () => setIsOpen(!isOpen)
 
+    const {scrollTo} = useScroll();
 
     return (
         <div className='h-20 w-full bg-[#e7f3fe]'>
@@ -57,7 +60,7 @@ const Header = ({mainRef, tariffRef, calcRef, certificateRef, footerRef}) => {
                         </Link>
                     </li>
                     <li className=''>
-                        <Link to='/' onClick={() => handleScroll(tariffRef.current)}
+                        <Link to='/' onClick={() => scrollTo("sec1")}
                               className='relative group cursor-pointer'>
                             <span>Услуги</span>
                             <div

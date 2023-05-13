@@ -5,8 +5,7 @@ import Header from "./components/header/Index";
 import Footer from "./components/footer/Index";
 
 import {Route, Routes} from "react-router-dom";
-
-import {useRef} from "react";
+import React, {useRef} from 'react';
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
