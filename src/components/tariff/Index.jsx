@@ -29,7 +29,7 @@ const Index = ({tariffRef}) => {
                                     data-tooltip-place='top'
                                     className='relative'
                                 >
-                                    Кол-Во Операций В Пакете{" "}
+                                    Колличество операций в пакете{" "}
                                     <FontAwesomeIcon
                                         className=' absolute top-0 text-[10px]'
                                         icon={faQuestion}
@@ -42,31 +42,31 @@ const Index = ({tariffRef}) => {
                                 <p>Работники / Физлица (Тд / Гпх)</p>
                             </li>
                             <li>
-                                <p>Бухгалтерский Учёт</p>
+                                <p>Бухгалтерский учёт</p>
                             </li>
                             <li>
-                                <p>Налоговый Учёт</p>
+                                <p>Налоговый учёт</p>
                             </li>
                             <li>
-                                <p>Проверка Кнп И Лицевых Счетов</p>
+                                <p>Проверка КНП и лицевых счетов</p>
                             </li>
                             <li>
-                                <p>Интернет-Банкинг</p>
+                                <p>Интернет-банкинг</p>
                             </li>
                             <li>
-                                <p>Статистическая Отчетность</p>
+                                <p>Статистическая отчетность</p>
                             </li>
                             <li>
-                                <p>Коммуникации И Консультации*</p>
+                                <p>Коммуникации и консультации</p>
                             </li>
                             <li>
-                                <p>Представительство В Налоговых Органах</p>
+                                <p>Представительство в налоговых органах</p>
                             </li>
                             <li>
-                                <p>Управленческая Отчетность</p>
+                                <p>Управленческая отчетность</p>
                             </li>
                             <li>
-                                <p>Торговая Компания</p>
+                                <p>Торговая компания</p>
                             </li>
                             <li>
                                 <p
@@ -107,10 +107,13 @@ const Index = ({tariffRef}) => {
                             </li>
                         </ul>
                     </div>
-                    <TariffPlan value='start'/>
-                    <TariffPlan value='standard'/>
-                    <TariffPlan value='prof'/>
-                    <TariffPlan value='business'/>
+                    <TariffPlan value='start' quantity="30" employees="1" communication="1" dealership={true}
+                                tradeCompany={true} EDT={true} price="60 000"/>
+                    <TariffPlan value='standard' quantity="50" employees="3" communication="1" dealership={true}
+                                tradeCompany={true} price="95 000 "/>
+                    <TariffPlan value='prof' quantity="150" employees="7" communication="2" FTA={true} price="180 000"/>
+                    <TariffPlan value='business' quantity="250" employees="10" communication="3" reporting={true}
+                                FTA={true} price="275 000"/>
                 </div>
 
             </div>

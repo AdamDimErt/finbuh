@@ -138,7 +138,7 @@ const Index = ({calcRef}) => {
                     </div>
                     <button
                         className='border buttonPrice mt-7 p-2 border-[#173A9A] bg-[#173A9A] rounded-xl text-[#fff]'>
-                        Получить предоложение
+                        <a href="tel:+77074408018">Получить предоложение</a>
                     </button>
                 </div>
             </div>

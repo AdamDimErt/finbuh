@@ -32,10 +32,8 @@ const Header = ({mainRef, tariffRef, calcRef, certificateRef, footerRef}) => {
         };
     }, []);
 
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
+    const toggleMenu = () => setIsOpen(!isOpen)
 
-    };
 
     return (
         <div className='h-20 w-full bg-[#e7f3fe]'>
@@ -47,7 +45,7 @@ const Header = ({mainRef, tariffRef, calcRef, certificateRef, footerRef}) => {
             >
                 <div className='logo grow  w-1/5 ml-5'>
                     <Link to='/' className='text-2xl '>FiNova</Link>
-                    <Link to={'/admin'}>admin</Link>
+
                 </div>
                 <ul className='lg:flex grow  hidden w-3/5 space-x-10 xl:text-md md:text-sm justify-center '>
                     <li className=''>
@@ -55,7 +53,7 @@ const Header = ({mainRef, tariffRef, calcRef, certificateRef, footerRef}) => {
                               className='relative group cursor-pointer'>
                             <span>О нас</span>
                             <div
-                                className='absolute bottom-[7.25px] left-0 w-[0px] h-[3px] bg-[#176c9a] transition-all group-hover:w-full'></div>
+                                className='absolute  left-0 w-[0px] h-[3px] bg-[#176c9a] transition-all group-hover:w-full'></div>
                         </Link>
                     </li>
                     <li className=''>
@@ -63,7 +61,7 @@ const Header = ({mainRef, tariffRef, calcRef, certificateRef, footerRef}) => {
                               className='relative group cursor-pointer'>
                             <span>Услуги</span>
                             <div
-                                className='absolute bottom-[7.25px] left-0 w-[0px] h-[3px] bg-[#176c9a] transition-all group-hover:w-full'></div>
+                                className='absolute  left-0 w-[0px] h-[3px] bg-[#176c9a] transition-all group-hover:w-full'></div>
                         </Link>
                     </li>
                     <li className=''>
@@ -71,9 +69,9 @@ const Header = ({mainRef, tariffRef, calcRef, certificateRef, footerRef}) => {
                               className='relative group cursor-pointer'>
                             <span>Калькулятор цен</span>
                             <div
-                                className='absolute bottom-[7.25px]  left-1/2 w-0 h-[3px] bg-[#176c9a] group-hover:w-1/2 group-hover:transition-all'></div>
+                                className='absolute   left-1/2 w-0 h-[3px] bg-[#176c9a] group-hover:w-1/2 group-hover:transition-all'></div>
                             <div
-                                className='absolute bottom-[7.25px]  right-1/2 w-0 h-[3px] bg-[#176c9a] group-hover:w-1/2 group-hover:transition-all'></div>
+                                className='absolute   right-1/2 w-0 h-[3px] bg-[#176c9a] group-hover:w-1/2 group-hover:transition-all'></div>
                         </Link>
                     </li>
                     <li className=''>
@@ -81,7 +79,7 @@ const Header = ({mainRef, tariffRef, calcRef, certificateRef, footerRef}) => {
                               className='relative group cursor-pointer'>
                             <span>Сертификаты</span>
                             <div
-                                className='absolute bottom-[7.25px] right-0 w-0 h-[3px] bg-[#176c9a] transition-all group-hover:w-full'></div>
+                                className='absolute  right-0 w-0 h-[3px] bg-[#176c9a] transition-all group-hover:w-full'></div>
                         </Link>
                     </li>
                     <li className=''>
@@ -89,7 +87,7 @@ const Header = ({mainRef, tariffRef, calcRef, certificateRef, footerRef}) => {
                               className='relative group cursor-pointer'>
                             <span>Контакты</span>
                             <div
-                                className='absolute bottom-[7.25px] right-0 w-0 h-[3px] bg-[#176c9a] transition-all group-hover:w-full'></div>
+                                className='absolute  right-0 w-0 h-[3px] bg-[#176c9a] transition-all group-hover:w-full'></div>
                         </Link>
                     </li>
                 </ul>
