@@ -125,7 +125,7 @@ const Index = () => {
                 spy={true}
                 smooth={true}
                 offset={50}
-                duration={800}
+                duration={790}
                 className='relative group cursor-pointer'
               >
                 <span>Сертификаты</span>
