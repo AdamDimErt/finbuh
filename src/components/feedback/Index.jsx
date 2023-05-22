@@ -88,7 +88,7 @@ const Index = ({feedbackRef}) => {
                     </div>
                 </Dialog>
             </Transition>
-            <div ref={feedbackRef} className='flex mt-7 buh  flex-col items-center bg-[#E3E2DF]'>
+            <div id="feedback" className='flex mt-7 buh  flex-col items-center bg-[#E3E2DF]'>
                 <h3 className='mt-4 mb-6 text-2xl text-[#fff]'>Оставте вашу заявку</h3>
                 <form onSubmit={handleSubmit(onSubmit)} className="form flex flex-col justify-center">
                     <label htmlFor="name">Имя</label>

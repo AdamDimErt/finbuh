@@ -5,12 +5,12 @@ import {useDispatch} from "react-redux";
 import {removePrice, setPrice} from "../../store/slice/calculator/calculator";
 import './calculator.css'
 
-const ChekBox = ({name, value, id}) => {
+const CheckBox = ({name, value, id}) => {
     const dispatch = useDispatch();
-    const [cheked, setCheked] = useState(false);
+    const [checked, setChecked] = useState(false);
     const calculate = () => {
-        setCheked(!cheked);
-        cheked ? dispatch(removePrice(value)) : dispatch(setPrice(value));
+        setChecked(!checked);
+        checked ? dispatch(removePrice(value)) : dispatch(setPrice(value));
     };
 
     return (
@@ -19,7 +19,7 @@ const ChekBox = ({name, value, id}) => {
                 <div className='flex items-center pl-3'>
                     <input
                         id={id}
-                        checked={cheked}
+                        checked={checked}
                         onChange={calculate}
                         type='checkbox'
                         value=''
@@ -37,4 +37,4 @@ const ChekBox = ({name, value, id}) => {
     );
 };
 
-export default ChekBox;
+export default CheckBox;
