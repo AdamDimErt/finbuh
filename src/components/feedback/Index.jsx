@@ -71,7 +71,7 @@ const Index = ({ feedbackRef }) => {
                   <div className='mt-2'>
                     <p className='text-sm text-gray-500'>
                       Заявка будет расмотренна в скором времени мы вам позвоним. Ожидайте
-                      наше звонка)
+                      нашего звонка)
                     </p>
                   </div>
                   <div className='mt-4'>

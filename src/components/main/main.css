@@ -19,4 +19,12 @@
         margin-top: -180px;
 
     }
+}@media screen and (max-width: 426px) {
+    .block {
+        left: 37%;
+        top: 50%;
+        margin-left: -140px;
+        margin-top: -180px;
+
+    }
 }

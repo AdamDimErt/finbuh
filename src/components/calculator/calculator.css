@@ -3,9 +3,7 @@
     color: #fff;
 }
 
-.price {
 
-}
 
 @media screen and (max-width: 768px) {
     .price {
@@ -28,6 +26,11 @@
     .widthText {
         font-size: 14px;
     }
+    .calc-center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media screen and (max-width: 320px) {
@@ -37,5 +40,10 @@
 
     .widthText {
         font-size: 14px;
+    }
+    .calc-center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

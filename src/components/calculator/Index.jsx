@@ -41,7 +41,7 @@ const Index = () => {
   return (
     <div id='calc' className={"backcalc"}>
       <h1 className='mt-8 text-3xl  font-bold text-center mb-10 '>Калькулятор цен</h1>
-      <div className=' bg-white flex-wrap calculator justify-between max-w-[1000px] m-[auto] p-5 border-4 rounded-lg flex'>
+      <div className='calc-center bg-white flex-wrap calculator justify-between max-w-[1000px] m-[auto] p-5 border-4 rounded-lg flex'>
         <div className='section width300 flex flex-col items-center'>
           <div className='w-[300px] flex flex-col mb-[50px]'>
             <h4 className='mb-[6px] widthText'>Организационно-правовая форма:</h4>

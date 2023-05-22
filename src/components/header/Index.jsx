@@ -140,19 +140,54 @@ const Header = () => {
           {isOpen ? (
             <ul className='absolute  items-center border-2 border-[#5D001E] bg-[#fff] border-solid rounded-lg px-2 py-4 w-40 top-14 font-[Montserrat] flex flex-col right-0'>
               <li className='mb-4'>
-                <LinkScroll to='about'>О нас</LinkScroll>
+                <LinkScroll
+                  to='about'
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={800}
+                >
+                  О нас
+                </LinkScroll>
               </li>
               <li className='mb-4'>
-                <LinkScroll to='tariff'>Услуги</LinkScroll>
+                <LinkScroll
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={800}
+                  to='tariff'
+                >
+                  Услуги
+                </LinkScroll>
               </li>
               <li className='mb-4'>
-                <LinkScroll to='calc'>Калькулятор цен</LinkScroll>
+                <LinkScroll spy={true} smooth={true} offset={50} duration={800} to='calc'>
+                  Калькулятор цен
+                </LinkScroll>
               </li>
               <li className='mb-4'>
-                <LinkScroll to='certificate'> Сертификаты</LinkScroll>
+                <LinkScroll
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={800}
+                  to='certificate'
+                >
+                  {" "}
+                  Сертификаты
+                </LinkScroll>
               </li>
               <li className=''>
-                <LinkScroll to='footer'>Контакты</LinkScroll>
+                <LinkScroll
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={800}
+                  to='footer'
+                >
+                  Контакты
+                </LinkScroll>
               </li>
             </ul>
           ) : (
