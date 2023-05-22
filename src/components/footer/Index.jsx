@@ -17,7 +17,7 @@ const Index = () => {
   return (
     <div
       id='footer'
-      className=' shadow-inner text-[#173a9a] flex justify-center flex-wrap bg-[#e7f3fe] h-100%'
+      className=' pb-3 shadow-inner text-[#173a9a] flex justify-center flex-wrap bg-[#e7f3fe] h-100%'
     >
       <div className='footer flex mt-7 flex-wrap container justify-between w-[1280px]'>
         {/*Блок контактов*/}
