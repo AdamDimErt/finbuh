@@ -5,39 +5,80 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "./slider.css";
 
-import ImgCom from "../../assets/sert1.jpg";
+import Sert1 from "../../assets/sert1.jpeg";
+import Sert2 from "../../assets/sert2.jpeg";
+import Sert3 from "../../assets/sert3.jpeg";
+import Sert4 from "../../assets/sert4.jpeg";
+import Sert5 from "../../assets/sert5.jpeg";
+import Sert6 from "../../assets/sert6.jpeg";
+import Sert7 from "../../assets/sert7.jpeg";
+import Sert8 from "../../assets/sert8.jpeg";
+import Sert9 from "../../assets/sert9.jpeg";
+import Sert10 from "../../assets/sert10.jpeg";
+import Sert11 from "../../assets/sert11.jpeg";
+import Sert12 from "../../assets/sert12.jpeg";
 
 const Index = () => {
   const img = [
     {
       id: 1,
-      src: ImgCom,
-      alt: "sert",
+      src: Sert1,
+      alt: "certificate",
     },
     {
       id: 2,
-      src: ImgCom,
-      alt: "hi",
+      src: Sert2,
+      alt: "certificate",
     },
     {
       id: 3,
-      src: ImgCom,
-      alt: "text",
+      src: Sert3,
+      alt: "certificate",
     },
     {
       id: 4,
-      src: ImgCom,
-      alt: "text",
+      src: Sert4,
+      alt: "certificate",
     },
     {
       id: 5,
-      src: ImgCom,
-      alt: "text",
+      src: Sert5,
+      alt: "certificate",
     },
     {
       id: 6,
-      src: ImgCom,
-      alt: "text",
+      src: Sert6,
+      alt: "certificate",
+    },
+    {
+      id: 7,
+      src: Sert7,
+      alt: "certificate",
+    },
+    {
+      id: 8,
+      src: Sert8,
+      alt: "certificate",
+    },
+    {
+      id: 9,
+      src: Sert9,
+      alt: "certificate",
+    },
+    {
+      id: 10,
+      src: Sert10,
+      alt: "certificate",
+    },
+    {
+      id: 11,
+      src: Sert11,
+      alt: "certificate",
+    },
+    {
+      id: 12,
+      src: Sert12,
+      alt: "certificate",
     },
   ];
 
