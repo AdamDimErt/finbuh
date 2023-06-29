@@ -85,9 +85,6 @@ const Index = ({tariffRef}) => {
 
                             </li>
                             <li>
-                                <p>1С В Облаке (1 Пользователь)</p>
-                            </li>
-                            <li>
                                 <p
                                     id='Do'
                                     data-tooltip-content='Электронный Документооборот'
