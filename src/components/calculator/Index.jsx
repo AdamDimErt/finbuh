@@ -2,7 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { removePrice, setPrice } from "../../store/slice/calculator/calculator";
+import {
+  removePrice,
+  setPrice,
+} from "../../store/slice/calculator/calculator";
 
 import CheckBox from "./CheckBox";
 import "./calculator.css";
@@ -35,16 +38,22 @@ const Index = () => {
   };
   const toogleTax = () => {
     setTax(!tax);
-    tax ? dispatch(setPrice(25000)) : dispatch(removePrice(25000));
+    tax
+      ? dispatch(setPrice(0.5))
+      : dispatch(removePrice(0.5));
   };
 
   return (
     <div id='calc' className={"backcalc"}>
-      <h1 className='mt-8 text-3xl  font-bold text-center mb-10 '>Калькулятор цен</h1>
+      <h1 className='mt-8 text-3xl  font-bold text-center mb-10 '>
+        Калькулятор цен
+      </h1>
       <div className='calc-center bg-white flex-wrap calculator justify-between max-w-[1000px] m-[auto] p-5 border-4 rounded-lg flex'>
         <div className='section width300 flex flex-col items-center'>
           <div className='w-[300px] flex flex-col mb-[50px]'>
-            <h4 className='mb-[6px] widthText'>Организационно-правовая форма:</h4>
+            <h4 className='mb-[6px] widthText'>
+              Организационно-правовая форма:
+            </h4>
             <div className='flex'>
               <button
                 onClick={toogleForm}
@@ -78,7 +87,9 @@ const Index = () => {
             />
           </div>
           <div className='width300'>
-            <p className='text-2xl width300 w-80 mb-6'>Количество Сотрудников:</p>
+            <p className='text-2xl width300 w-80 mb-6'>
+              Количество Сотрудников:
+            </p>
             <input
               min='0'
               onChange={upgradeEmpl}
@@ -88,7 +99,9 @@ const Index = () => {
           </div>
         </div>
         <div className='section w-[300px]  flex flex-col'>
-          <h4 className='mb-[6px]'>Режим налогообложения:</h4>
+          <h4 className='mb-[6px]'>
+            Режим налогообложения:
+          </h4>
           <div className='  flex'>
             <button
               onClick={toogleTax}
@@ -114,22 +127,53 @@ const Index = () => {
               Вид деятельности:
             </h3>
             <ul className='w-48 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:text-white'>
-              <CheckBox id={"NDS"} name={"Наличие НДС"} value={20000} />
-              <CheckBox id={"production"} name={"Производство"} value={20000} />
-              <CheckBox id={"Catering"} name={"Общественное питание"} value={20000} />
-              <CheckBox id={"import_export"} name={"Импорт-экспорт"} value={15000} />
-              <CheckBox id={"dealing "} name={"Торговля"} value={15000} />
-              <CheckBox id={"money "} name={"Валютные операции"} value={10000} />
-              <CheckBox id={"branch "} name={"Наличие филиалов"} value={10000} />
+              <CheckBox
+                id={"NDS"}
+                name={"Наличие НДС"}
+                value={0.5}
+              />
+              <CheckBox
+                id={"production"}
+                name={"Производство"}
+                value={0.5}
+              />
+              <CheckBox
+                id={"Catering"}
+                name={"Общественное питание"}
+                value={0.5}
+              />
+              <CheckBox
+                id={"import_export"}
+                name={"Импорт-экспорт"}
+                value={0.2}
+              />
+              <CheckBox
+                id={"dealing "}
+                name={"Торговля"}
+                value={0.5}
+              />
+              <CheckBox
+                id={"money "}
+                name={"Валютные операции"}
+                value={0.3}
+              />
+              <CheckBox
+                id={"branch "}
+                name={"Наличие филиалов"}
+                value={0.3}
+              />
             </ul>
           </div>
         </div>
         <div className='section w-[300px] flex items-center text-center flex-col text-2xl m-auto'>
-          <p className='mb-20'>Ваш оптимальный тариф почти готов</p>
+          <p className='mb-20'>
+            Ваш оптимальный тариф почти готов
+          </p>
           <h2 className=' text-4xl mb-4'>СТОИМОСТЬ:</h2>
-          <div className='w-[300px] price'>
+          <div className='max-w-[300px] price flex flex-col items-end'>
             <h1 className='price text-6xl border border-[#173A9A] rounded-2xl p-5'>
-              {price + docs * 1000 + employee * 1000} <span className=' text-2xl'>₸</span>
+              {price + docs * 1000 + employee * 1000}
+              <span className=' text-2xl'>₸</span>
             </h1>
           </div>
           <button className='border buttonPrice mt-7 p-2 border-[#173A9A] bg-[#173A9A] rounded-xl text-[#fff]'>
